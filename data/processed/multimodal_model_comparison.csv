@@ -1,0 +1,5 @@
+model,accuracy,sensitivity,specificity,f1,roc_auc,TP,TN,FP,FN,correct,total
+RandomForest,0.6471,0.7778,0.5,0.7,0.5556,7,4,4,2,11,17
+SVM_RBF,0.5294,0.6667,0.375,0.6,0.1528,6,3,5,3,9,17
+GradientBoosting,0.5882,0.7778,0.375,0.6667,0.5,7,3,5,2,10,17
+L2-LogReg (Clinical Only),0.3529,0.6667,0.0,0.5217,0.5,6,0,8,3,6,17

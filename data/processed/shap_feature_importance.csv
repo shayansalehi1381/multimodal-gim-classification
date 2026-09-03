@@ -1,0 +1,20 @@
+Feature,Mean_Abs_SHAP,Model,Rank
+LBC,0.6598944269122052,L2-LogReg (Clinical),1
+TM,0.4515209893502456,L2-LogReg (Clinical),2
+TVF,0.29955426814437885,L2-LogReg (Clinical),3
+MLE,0.29564319340049566,L2-LogReg (Clinical),4
+MTB,0.2695265705591348,L2-LogReg (Clinical),5
+Age,0.23339423386252825,L2-LogReg (Clinical),6
+WOS,0.15603323302860375,L2-LogReg (Clinical),7
+Visual_PC2,0.07129860039878422,RandomForest (Multimodal),1
+Visual_PC3,0.05693700494086523,RandomForest (Multimodal),2
+LBC,0.04427800107708196,RandomForest (Multimodal),3
+Visual_PC1,0.03594321036171527,RandomForest (Multimodal),4
+Visual_PC5,0.03038142118638442,RandomForest (Multimodal),5
+Age,0.029613970699326097,RandomForest (Multimodal),6
+Visual_PC4,0.028957498043895104,RandomForest (Multimodal),7
+TM,0.017506985965196748,RandomForest (Multimodal),8
+MLE,0.015156153160564926,RandomForest (Multimodal),9
+MTB,0.007388212107881224,RandomForest (Multimodal),10
+TVF,0.005948253203767909,RandomForest (Multimodal),11
+WOS,0.005603727517943204,RandomForest (Multimodal),12

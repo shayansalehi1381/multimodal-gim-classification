@@ -1,0 +1,24 @@
+# Environments
+.env
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# Data & Multimedia (Heavy files ignored)
+data/raw/
+data/extracted_frames/
+data/filtered_frames/
+*.mp4
+*.mkv
+*.avi
+*.mov
+
+# Note: data/processed/ and figures/ are intentionally NOT ignored
+# to preserve the processed embeddings and evaluation results.

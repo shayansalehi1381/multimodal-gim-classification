@@ -1,0 +1,8 @@
+test_case_code,OLGIM_Stage,OLGIM_Risk,true_label,pred_label,prob_incomplete,correct
+2601,2,Low Risk,Incomplete,Incomplete,0.7092,True
+2602,1,Low Risk,Incomplete,Incomplete,0.6644,True
+2605,3,High Risk,Incomplete,Incomplete,0.6487,True
+2606,1,Low Risk,Complete,Incomplete,0.8597,False
+2610,2,Low Risk,Incomplete,Complete,0.3004,False
+2611,1,Low Risk,Incomplete,Incomplete,0.5154,True
+2613,2,Low Risk,Incomplete,Incomplete,0.5852,True

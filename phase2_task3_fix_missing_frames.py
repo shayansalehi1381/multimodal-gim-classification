@@ -50,6 +50,7 @@ for img_path in image_files_with_path:
         dropped_count += 1
 
 print(f"\nFiltering complete:")
-print(f"  Total processed : {len(image_files)}")
+print(f"  Total processed : {len(image_files_with_path)}")
 print(f"  Kept (saved)    : {kept_count}")
 print(f"  Dropped (blur)  : {dropped_count}")
+print(f"  Destination     : {output_folder}")

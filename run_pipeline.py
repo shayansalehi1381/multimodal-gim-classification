@@ -36,7 +36,9 @@ def main():
         "phase1_process_metadata.py",
         "phase2_task2_extract_embeddings.py",
         "phase2_task3_patient_pooling.py",
-        "phase2_task4_multimodal_fusion.py"
+        "phase2_task4_multimodal_fusion.py",
+        "phase2_dinov2_extract_embeddings.py",
+        "phase2_dinov2_patient_pooling_and_fusion.py"
     ]
     
     phase3_4_scripts = [
@@ -44,6 +46,8 @@ def main():
         "phase3_task2_baseline_lr.py",
         "phase3_task4_multimodal_classifiers.py",
         "phase3_task6_statistical_evaluation.py",
+        "phase3_dinov2_multimodal_evaluation.py",
+        "phase3_dinov2_final_stats_and_plots.py",
         "phase4_task1_shap_analysis.py",
         "phase4_task2_shap_plots.py",
         "phase4_task3_attention_rollout.py"

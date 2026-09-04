@@ -45,6 +45,12 @@ checks = [
     ("data/processed/infold_pca_summary.csv",          "file", "In-Fold PCA Summary"),
     ("data/processed/olgim_subcohort_analysis.csv",    "file", "OLGIM Sub-cohort"),
     ("data/processed/statistical_evaluation_report.csv","file","Statistical Report"),
+    ("data/processed/dinov2_frame_embeddings_2016x768.npy", "file", "DINOv2 Frame Embeds"),
+    ("data/processed/dinov2_patient_features_17x768.npy", "file", "DINOv2 Patient Feats"),
+    ("data/processed/multimodal_biomedclip_dinov2_n17.csv", "file", "DINOv2 Fused Dataset"),
+    ("data/processed/dinov2_final_statistical_report.csv", "file", "DINOv2 Stats Report"),
+    ("figures/multimodal_roc_comparison_dinov2.png", "file", "DINOv2 ROC Plot"),
+    ("figures/model_accuracy_jump_comparison.png", "file", "DINOv2 Jump Plot"),
 ]
 
 print(f"│  {'Asset':<28s}  {'Status':>6s}  {'Size':>10s}  │")
@@ -86,12 +92,24 @@ emb_check = "✔" if emb.shape == (2016, 512) else "⚠"
 pvf = np.load(P("data","processed","patient_visual_features_n17.npy"))
 pvf_check = "✔" if pvf.shape == (17, 512) else "⚠"
 
+dinov2_emb = np.load(P("data","processed","dinov2_frame_embeddings_2016x768.npy")) if os.path.exists(P("data","processed","dinov2_frame_embeddings_2016x768.npy")) else np.zeros((0,0))
+dinov2_emb_check = "✔" if dinov2_emb.shape == (2016, 768) else "⚠"
+
+dinov2_pvf = np.load(P("data","processed","dinov2_patient_features_17x768.npy")) if os.path.exists(P("data","processed","dinov2_patient_features_17x768.npy")) else np.zeros((0,0))
+dinov2_pvf_check = "✔" if dinov2_pvf.shape == (17, 768) else "⚠"
+
+dinov2_mm = pd.read_csv(P("data","processed","multimodal_biomedclip_dinov2_n17.csv")) if os.path.exists(P("data","processed","multimodal_biomedclip_dinov2_n17.csv")) else pd.DataFrame()
+dinov2_shape_check = "✔" if dinov2_mm.shape == (17, 1301) else "⚠"
+
 print(f"│  {'Item':<35s}  {'Actual':>14s}  {'Expected':>14s}  {'':>2s} │")
 print("│  " + "─"*60 + "  │")
 print(f"│  {'Filtered Frames':<35s}  {n_frames:>14d}  {'2,016':>14s}  {frame_check:>2s} │")
 print(f"│  {'Frame Embeddings':<35s}  {str(emb.shape):>14s}  {'(2016, 512)':>14s}  {emb_check:>2s} │")
 print(f"│  {'Patient Visual Features':<35s}  {str(pvf.shape):>14s}  {'(17, 512)':>14s}  {pvf_check:>2s} │")
 print(f"│  {'Multimodal Dataset':<35s}  {str(df_mm.shape):>14s}  {'(17, 533)':>14s}  {shape_check:>2s} │")
+print(f"│  {'DINOv2 Frame Embeds':<35s}  {str(dinov2_emb.shape):>14s}  {'(2016, 768)':>14s}  {dinov2_emb_check:>2s} │")
+print(f"│  {'DINOv2 Patient Features':<35s}  {str(dinov2_pvf.shape):>14s}  {'(17, 768)':>14s}  {dinov2_pvf_check:>2s} │")
+print(f"│  {'DINOv2 Multimodal Dataset':<35s}  {str(dinov2_mm.shape):>14s}  {'(17, 1301)':>14s}  {dinov2_shape_check:>2s} │")
 print("└" + "─"*68 + "┘")
 
 # ── 3. Random Forest Confusion Matrix ───────────────────────────────────────
@@ -151,9 +169,31 @@ sig = "✔ Significant" if p_corr < 0.05 else "✘ Not significant (p≥0.05)"
 print(f"│    Result            : {sig:<44s} │")
 print("└" + "─"*68 + "┘")
 
+# ── 5. New DINOv2 Statistical Summary ─────────────────────────────────────────
+print("\n┌─ 5. MULTI-VISION DINOV2 STATISTICAL SUMMARY " + "─"*22 + "┐")
+
+dinov2_stats = pd.read_csv(P("data","processed","dinov2_final_statistical_report.csv"))
+
+for _, row in dinov2_stats.iterrows():
+    model = row['Model']
+    acc_str = f"{row['Accuracy']:.3f} [{row['Accuracy_CI_lower']:.3f}, {row['Accuracy_CI_upper']:.3f}]"
+    f1_str  = f"{row['F1_Score']:.3f} [{row['F1_CI_lower']:.3f}, {row['F1_CI_upper']:.3f}]"
+    auc_str = f"{row['ROC_AUC']:.3f} [{row['ROC_AUC_CI_lower']:.3f}, {row['ROC_AUC_CI_upper']:.3f}]"
+    p_val   = row['McNemar_p_value_vs_Baseline']
+    print(f"│  {model:<26s}                                          │")
+    print(f"│    Accuracy  : {acc_str:<52s} │")
+    print(f"│    F1-Score  : {f1_str:<52s} │")
+    print(f"│    ROC-AUC   : {auc_str:<52s} │")
+    print(f"│    McNemar vs Baseline : {p_val:<41.4f} │")
+    print("│                                                                    │")
+
+print("└" + "─"*68 + "┘")
+
 # ── Final Verdict ────────────────────────────────────────────────────────────
 all_ok = (n_frames == 2016 and df_mm.shape == (17, 533)
-          and emb.shape == (2016, 512) and pvf.shape == (17, 512))
+          and emb.shape == (2016, 512) and pvf.shape == (17, 512)
+          and dinov2_emb.shape == (2016, 768) and dinov2_pvf.shape == (17, 768)
+          and dinov2_mm.shape == (17, 1301))
 
 print()
 if all_ok:

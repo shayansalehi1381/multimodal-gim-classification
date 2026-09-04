@@ -180,15 +180,23 @@ $env:PYTHONIOENCODING="utf-8"; python run_pipeline.py --eval-only
 
 ---
 
-### Section C: Full Pipeline Execution (From Raw Video)
+### Section C: Full Pipeline Execution (From Raw Video Archive)
 
-To execute the entire pipeline from scratch—including video frame extraction, Laplacian blur filtering, BiomedCLIP and DINOv2 feature extraction, and full training:
+If you wish to execute the complete pipeline from scratch (Phase 1 through Phase 4) using the raw endoscopic videos and images:
 
-1. Ensure the raw endoscopy videos (`.mp4`, `.mkv`) and frame captures (downloaded from the [Zenodo Media Archive](https://zenodo.org/records/20707267/files/GIMENDO_v2_Images_Videos.rar?download=1)) are placed in the project root or `data/raw/` according to the metadata table `GIMENDO_v2_Metadata.xlsx`.
-2. Run the master orchestrator:
-```bash
-python run_pipeline.py
-```
+1. **Download Raw Assets from Zenodo**:
+   - Download the raw media archive: [`GIMENDO_v2_Images_Videos.rar`](https://zenodo.org/records/20707267/files/GIMENDO_v2_Images_Videos.rar?download=1)
+   - Download the clinical metadata: [`GIMENDO_v2_Metadata.xlsx`](https://zenodo.org/records/20707267/files/GIMENDO_v2_Metadata.xlsx?download=1)
+
+2. **Directory Placement & Extraction**:
+   - Extract the contents of `GIMENDO_v2_Images_Videos.rar`.
+   - Place all raw video files (`.mp4`, `.mkv`) and raw image files (`.jpg`, `.png`) directly into the project root directory or inside `data/raw/`.
+   - Ensure the clinical spreadsheet `GIMENDO_v2_Metadata.xlsx` is placed in the project root directory.
+
+3. **Execute Full Pipeline**:
+   ```bash
+   python run_pipeline.py
+   ```
 
 ---
 

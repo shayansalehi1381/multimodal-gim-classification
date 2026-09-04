@@ -1,6 +1,7 @@
 import os
 import sys
 import pandas as pd
+# pyrefly: ignore [missing-import]
 import numpy as np
 
 # تنظیم خروجی کنسول برای سازگاری کامل با ویندوز و یونیکد

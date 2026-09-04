@@ -26,6 +26,7 @@ print("=" * 70)
 print("\n[1/4] Importing libraries …")
 
 try:
+    # pyrefly: ignore [missing-import]
     import torch
     print(f"  ✔ PyTorch       : {torch.__version__}")
 except ImportError as e:
@@ -33,6 +34,7 @@ except ImportError as e:
     sys.exit(1)
 
 try:
+    # pyrefly: ignore [missing-import]
     import open_clip
     print(f"  ✔ open_clip     : {open_clip.__version__}")
 except ImportError as e:
@@ -40,6 +42,7 @@ except ImportError as e:
     sys.exit(1)
 
 try:
+    # pyrefly: ignore [missing-import]
     import transformers
     print(f"  ✔ transformers  : {transformers.__version__}")
 except ImportError as e:
@@ -86,6 +89,7 @@ image_size = None
 norm_mean  = None
 norm_std   = None
 try:
+    # pyrefly: ignore [missing-import]
     from torchvision import transforms as T
     for t in preprocess_val.transforms:
         if isinstance(t, T.Resize):

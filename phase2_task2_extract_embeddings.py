@@ -22,8 +22,11 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 
 # ── Imports ──────────────────────────────────────────────────────────────────
 try:
+    # pyrefly: ignore [missing-import]
     import numpy as np
+    # pyrefly: ignore [missing-import]
     import torch
+    # pyrefly: ignore [missing-import]
     import torch.nn.functional as F
     # pyrefly: ignore [missing-import]
     import open_clip

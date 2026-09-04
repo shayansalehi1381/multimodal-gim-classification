@@ -12,13 +12,22 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Data & Multimedia (Heavy files ignored)
-data/raw/
-data/extracted_frames/
-data/filtered_frames/
+*.jpg
+*.jpeg
+*.png
 *.mp4
 *.mkv
 *.avi
 *.mov
+*.rar
+*.zip
+data/raw/
+data/filtered_frames/
+data/extracted_frames/
+
+# Force-keep output figures and visual rollout plots:
+!figures/*.png
+!figures/*.jpg
 
 # Intermediate binary artifacts & heavy tables
 *.npy

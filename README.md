@@ -24,6 +24,15 @@ While modern **Image-Enhanced Endoscopy (IEE)**—such as Narrow-Band Imaging (N
 ### Project Objective
 This study introduces an end-to-end, non-invasive **Multimodal Multi-Vision AI Pipeline** designed to accurately differentiate Complete vs. Incomplete GIM in real time. The framework is developed and validated using the clinical **GIM-ENDO dataset** ($n = 17$ histopathologically confirmed cases; Zenodo DOI: [10.5281/zenodo.20683008](https://doi.org/10.5281/zenodo.20683008)) captured via high-definition **Olympus EVIS X1** endoscopy systems.
 
+### 📥 Dataset Access & Public Availability
+The raw endoscopic videos, images, and clinical records are publicly available under open access on Zenodo:
+- **Zenodo Record**: [https://zenodo.org/records/20707267](https://zenodo.org/records/20707267)
+- **Direct Media Archive (.rar)**: [Download GIMENDO_v2_Images_Videos.rar](https://zenodo.org/records/20707267/files/GIMENDO_v2_Images_Videos.rar?download=1)
+- **Clinical Metadata (.xlsx)**: [Download GIMENDO_v2_Metadata.xlsx](https://zenodo.org/records/20707267/files/GIMENDO_v2_Metadata.xlsx?download=1)
+- **Dataset Documentation**: [Download README.md](https://zenodo.org/records/20707267/files/README.md?download=1)
+
+*Note: For quick evaluation and full statistical reproduction (`python run_pipeline.py --eval-only`), downloading the raw media archive is NOT required, as pre-extracted numerical representations are version-controlled in `data/processed/`.*
+
 ---
 
 ## 2. Architecture & Multi-Vision Pipeline
@@ -175,7 +184,7 @@ $env:PYTHONIOENCODING="utf-8"; python run_pipeline.py --eval-only
 
 To execute the entire pipeline from scratch—including video frame extraction, Laplacian blur filtering, BiomedCLIP and DINOv2 feature extraction, and full training:
 
-1. Ensure the raw endoscopy videos (`.mp4`, `.mkv`) and frame captures are placed in the project root or `data/raw/` according to the metadata table `GIMENDO_v2_Metadata.xlsx`.
+1. Ensure the raw endoscopy videos (`.mp4`, `.mkv`) and frame captures (downloaded from the [Zenodo Media Archive](https://zenodo.org/records/20707267/files/GIMENDO_v2_Images_Videos.rar?download=1)) are placed in the project root or `data/raw/` according to the metadata table `GIMENDO_v2_Metadata.xlsx`.
 2. Run the master orchestrator:
 ```bash
 python run_pipeline.py

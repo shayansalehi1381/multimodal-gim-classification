@@ -1,0 +1,2 @@
+Model,Accuracy,Accuracy_CI_lower,Accuracy_CI_upper,F1_Score,F1_CI_lower,F1_CI_upper,ROC_AUC,ROC_AUC_CI_lower,ROC_AUC_CI_upper,McNemar_p_value_vs_Baseline
+Multimodal SVC (PCs=8),0.8235294117647058,0.5882352941176471,1.0,0.8,0.5,1.0,0.6944444444444444,0.4141558441558441,0.9334848484848484,0.0654296875

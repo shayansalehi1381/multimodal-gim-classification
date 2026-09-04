@@ -5,7 +5,7 @@ import shutil
 # Missing cases
 missing_cases = ['2601', '2602', '2603', '2604', '2605', '2606', '2607', '2608', '2611', '2613', '2614', '2615']
 
-input_folder = '.'
+search_dirs = [os.path.join('data', 'raw'), '.']
 output_folder = os.path.join('data', 'filtered_frames')
 os.makedirs(output_folder, exist_ok=True)
 
@@ -13,24 +13,25 @@ BLUR_THRESHOLD = 100.0
 
 print("=== Fixing Missing Frames ===")
 
-# Find all image files in root matching the missing cases
-image_files = []
-for f in os.listdir(input_folder):
-    if f.lower().endswith(('.jpg', '.jpeg', '.png')):
-        # Check if starts with one of the missing case codes
-        if any(f.startswith(c) for c in missing_cases):
-            image_files.append(f)
+image_files_with_path = []
+for directory in search_dirs:
+    if os.path.exists(directory):
+        found = [os.path.join(directory, f) for f in os.listdir(directory)
+                 if f.lower().endswith(('.jpg', '.jpeg', '.png')) and any(f.startswith(f"{c}_") for c in missing_cases)]
+        if found:
+            image_files_with_path = found
+            break
 
-print(f"Found {len(image_files)} raw images for missing cases.")
+print(f"Found {len(image_files_with_path)} raw images for missing cases.")
 
 kept_count = 0
 dropped_count = 0
 
-for filename in image_files:
+for img_path in image_files_with_path:
+    filename = os.path.basename(img_path)
     # Identify which case code it belongs to
-    case_code = next(c for c in missing_cases if filename.startswith(c))
-    
-    img_path = os.path.join(input_folder, filename)
+    case_code = next(c for c in missing_cases if filename.startswith(f"{c}_"))
+
     image = cv2.imread(img_path)
     
     if image is None:

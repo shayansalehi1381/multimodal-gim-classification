@@ -33,6 +33,9 @@ def main():
 
     # The pipeline scripts in execution order
     phase1_2_scripts = [
+        "phase1_extract_frames.py",
+        "phase1_filter_blurry.py",
+        "phase2_task3_fix_missing_frames.py",
         "phase1_process_metadata.py",
         "phase2_task2_extract_embeddings.py",
         "phase2_task3_patient_pooling.py",

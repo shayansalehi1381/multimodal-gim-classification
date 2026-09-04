@@ -3,7 +3,6 @@ import cv2
 import re
 
 # ۱. تعریف مسیرها
-dataset_folder = '.' 
 output_folder = os.path.join('data', 'extracted_frames')
 os.makedirs(output_folder, exist_ok=True)
 
@@ -12,12 +11,19 @@ def get_case_id(filename):
     match = re.search(r'^(\d{4})_', filename)
     return match.group(1) if match else "Unknown"
 
-# پسوندهای ویدیویی
-video_exts = ('.mp4', '.mkv', '.avi', '.mov')
-
 print("=== شروع استخراج فریم از ویدیوها (۱ فریم در ثانیه) ===")
 
-video_files = [f for f in os.listdir(dataset_folder) if f.lower().endswith(video_exts)]
+search_dirs = [os.path.join('data', 'raw'), '.']
+video_exts = ('.mp4', '.mkv', '.avi', '.mov')
+video_files = []
+dataset_folder = '.'
+for directory in search_dirs:
+    if os.path.exists(directory):
+        found = [f for f in os.listdir(directory) if f.lower().endswith(video_exts)]
+        if found:
+            dataset_folder = directory
+            video_files = found
+            break
 print(f"🎬 تعداد کل ویدیوهای پیدا شده: {len(video_files)}")
 
 total_saved_frames = 0

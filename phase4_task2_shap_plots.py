@@ -31,6 +31,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 # pyrefly: ignore [missing-import]
 import seaborn as sns
+# pyrefly: ignore [missing-import]
 import shap
 
 print("=" * 70)
@@ -105,6 +106,7 @@ plt.xlabel("Mean |SHAP Value| (Impact on Model Output)", fontsize=12)
 plt.title("Feature Importance: Deep Visual vs. Clinical (RF Model)", fontsize=14, pad=15)
 
 # Custom legend
+# pyrefly: ignore [missing-import]
 from matplotlib.patches import Patch
 legend_elements = [
     Patch(facecolor='#4c72b0', label='Deep Visual Features (PCA)'),

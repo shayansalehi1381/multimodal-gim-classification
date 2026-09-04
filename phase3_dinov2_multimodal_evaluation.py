@@ -44,7 +44,7 @@ def find_optimal_threshold(y_true, y_prob):
 
 def main():
     print("Loading fused multimodal dataset...")
-    df = pd.read_pickle("data/processed/multimodal_biomedclip_dinov2_n17.pkl")
+    df = pd.read_csv("data/processed/multimodal_biomedclip_dinov2_n17.csv")
     
     # Extract target label
     y = df['Subtype'].map({'Complete': 0, 'Incomplete': 1}).values

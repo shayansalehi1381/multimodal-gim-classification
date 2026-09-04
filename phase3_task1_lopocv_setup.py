@@ -2,7 +2,7 @@
 Task 1.3 – Leave-One-Patient-Out Cross-Validation (LOPOCV) Setup
 =================================================================
 Input:
-  - data/processed/multimodal_dataset_n17.pkl
+  - data/processed/multimodal_dataset_n17.csv
 Output:
   - data/processed/lopocv_splits_n17.pkl
 """
@@ -30,11 +30,11 @@ print("=" * 70)
 
 # ── 1. Load Data ─────────────────────────────────────────────────────────────
 OUTPUT_DIR = os.path.join("data", "processed")
-DATA_PATH  = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.pkl")
+DATA_PATH  = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.csv")
 SPLITS_PATH = os.path.join(OUTPUT_DIR, "lopocv_splits_n17.pkl")
 
 print("\n[1/5] Loading multimodal dataset...")
-df = pd.read_pickle(DATA_PATH)
+df = pd.read_csv(DATA_PATH)
 print(f"      Shape: {df.shape}")
 print(f"      Columns: {df.shape[1]}")
 
@@ -119,7 +119,7 @@ for fold_idx, (train_idx, test_idx) in enumerate(logo.split(X, y, groups)):
     n_train_complete = (train_y == 0).sum()
     n_train_incomplete = (train_y == 1).sum()
 
-    print(f"      {fold_idx+1:4d}  {test_case:>10s}  {test_label:>10s}  "
+    print(f"      {fold_idx+1:4d}  {str(test_case):>10s}  {test_label:>10s}  "
           f"{n_train_complete:8d}  {n_train_incomplete:8d}  {len(train_idx):7d}")
 
     # Verify zero data leakage

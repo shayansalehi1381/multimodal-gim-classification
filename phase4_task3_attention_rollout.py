@@ -7,8 +7,11 @@ import os
 import sys
 import types
 import warnings
+# pyrefly: ignore [missing-import]
 import numpy as np
+# pyrefly: ignore [missing-import]
 import cv2
+# pyrefly: ignore [missing-import]
 import matplotlib.pyplot as plt
 from PIL import Image
 
@@ -20,8 +23,11 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 
 warnings.filterwarnings('ignore')
 
+# pyrefly: ignore [missing-import]
 import torch
+# pyrefly: ignore [missing-import]
 import torch.nn.functional as F
+# pyrefly: ignore [missing-import]
 import open_clip
 
 print("=" * 70)
@@ -29,7 +35,7 @@ print("   Task 3.4 – Visual Attention Rollout")
 print("=" * 70)
 
 # ── Config ───────────────────────────────────────────────────────────────────
-IMG_DIR = os.path.join("data", "filtered_frames")
+IMG_DIRS = [os.path.join("data", "filtered_frames"), "."]
 FIG_DIR = "figures"
 os.makedirs(FIG_DIR, exist_ok=True)
 
@@ -42,16 +48,34 @@ TARGET_CASES = {
 }
 
 selected_frames = {}
-for fname in sorted(os.listdir(IMG_DIR)):
-    if not fname.lower().endswith(('.jpg', '.png')):
+for search_dir in IMG_DIRS:
+    if not os.path.exists(search_dir):
         continue
-    # Filenames are like CASE_2601_...
-    if fname.startswith('CASE_'):
-        case_id = fname.split('_')[1]
-        if case_id in TARGET_CASES and case_id not in selected_frames:
-            selected_frames[case_id] = os.path.join(IMG_DIR, fname)
+    for fname in sorted(os.listdir(search_dir)):
+        if not fname.lower().endswith(('.jpg', '.png')):
+            continue
+        
+        # Filenames are like CASE_2601_... or 2601_...
+        case_id = None
+        if fname.startswith('CASE_'):
+            case_id = fname.split('_')[1]
+        else:
+            # Fallback for 2601_...
+            parts = fname.split('_')
+            if parts and parts[0].isdigit():
+                case_id = parts[0]
+
+        if case_id and case_id in TARGET_CASES and case_id not in selected_frames:
+            selected_frames[case_id] = os.path.join(search_dir, fname)
+            
+        if len(selected_frames) == len(TARGET_CASES):
+            break
     if len(selected_frames) == len(TARGET_CASES):
         break
+
+if not selected_frames:
+    print("\n[!] No matching representative frames found for attention rollout. Skipping gracefully.")
+    sys.exit(0)
 
 # ── 1. Load Model ────────────────────────────────────────────────────────────
 print("\n[1/4] Loading BiomedCLIP...")

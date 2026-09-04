@@ -46,7 +46,7 @@ print("=" * 70)
 
 # ── Config ───────────────────────────────────────────────────────────────────
 OUTPUT_DIR = os.path.join("data", "processed")
-DATA_PATH  = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.pkl")
+DATA_PATH  = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.csv")
 PRED_PATH  = os.path.join(OUTPUT_DIR, "multimodal_classifier_predictions.csv")
 COMP_PATH  = os.path.join(OUTPUT_DIR, "multimodal_model_comparison.csv")
 
@@ -77,7 +77,7 @@ MODELS = {
 
 # ── 1. Load Data ─────────────────────────────────────────────────────────────
 print("\n[1/4] Loading dataset...")
-df = pd.read_pickle(DATA_PATH)
+df = pd.read_csv(DATA_PATH)
 
 vis_cols = sorted([c for c in df.columns if c.startswith('vis_feat_')],
                   key=lambda c: int(c.split('_')[-1]))
@@ -207,7 +207,7 @@ for model_name in MODELS.keys():
     print(f"  {'Fold':>4}  {'Case':>6}  {'True':>10}  {'Pred':>10}  {'P(Inc)':>7}  {'':>5}")
     for _, row in model_preds.iterrows():
         mark = '✔' if row['correct'] else '✘'
-        print(f"  {row['fold']:4d}  {row['test_case_code']:>6s}  "
+        print(f"  {row['fold']:4d}  {str(row['test_case_code']):>6s}  "
               f"{row['true_label']:>10s}  {row['pred_label']:>10s}  "
               f"{row['prob_incomplete']:>7.4f}  {mark:>5s}")
 

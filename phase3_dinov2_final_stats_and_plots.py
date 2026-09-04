@@ -56,7 +56,7 @@ def bootstrap_cis(y_true, y_pred, y_prob, n_iterations=1000):
 
 def main():
     print("Loading data for statistical analysis and plotting...")
-    df = pd.read_pickle("data/processed/multimodal_biomedclip_dinov2_n17.pkl")
+    df = pd.read_csv("data/processed/multimodal_biomedclip_dinov2_n17.csv")
     y = df['Subtype'].map({'Complete': 0, 'Incomplete': 1}).values
     groups = df['Case Code'].values
     

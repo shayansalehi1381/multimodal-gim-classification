@@ -41,7 +41,7 @@ print("=" * 70)
 
 # ── Config ───────────────────────────────────────────────────────────────────
 OUTPUT_DIR   = os.path.join("data", "processed")
-DATA_PATH    = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.pkl")
+DATA_PATH    = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.csv")
 SUMMARY_PATH = os.path.join(OUTPUT_DIR, "infold_pca_summary.csv")
 
 CLINICAL_COLS = ['LBC', 'MTB', 'WOS', 'TVF', 'MLE', 'TM', 'Age']
@@ -52,7 +52,7 @@ PCA_VAR_THRESH  = 0.90    # Strategy B: cumulative variance threshold
 
 # ── 1. Load Data ─────────────────────────────────────────────────────────────
 print("\n[1/4] Loading dataset...")
-df = pd.read_pickle(DATA_PATH)
+df = pd.read_csv(DATA_PATH)
 
 vis_cols = sorted([c for c in df.columns if c.startswith('vis_feat_')],
                   key=lambda c: int(c.split('_')[-1]))
@@ -125,7 +125,7 @@ for fold_idx, (train_idx, test_idx) in enumerate(logo.split(X_vis, y, groups)):
     X_train_b = np.hstack([X_clin_train, X_vis_train_b])
     X_test_b  = np.hstack([X_clin_test, X_vis_test_b])
 
-    print(f"      {fold_idx+1:4d}  {test_case:>8s}  "
+    print(f"      {fold_idx+1:4d}  {str(test_case):>8s}  "
           f"{PCA_FIXED_K:>10d}  {var_expl_a:>9.4f}  "
           f"{k_thresh:>10d}  {var_expl_b:>9.4f}  "
           f"{str(X_train_a.shape):>10s}  {str(X_test_a.shape):>10s}")

@@ -2,7 +2,7 @@
 Task 1.4 – Clinical Explainability (SHAP Values Computation)
 ============================================================
 Input:
-  - data/processed/multimodal_dataset_n17.pkl
+  - data/processed/multimodal_dataset_n17.csv
 Output:
   - data/processed/shap_feature_importance.csv
   - data/processed/shap_values_cache.pkl
@@ -21,6 +21,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
 
 warnings.filterwarnings('ignore')
 
+# pyrefly: ignore [missing-import]
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import LeaveOneGroupOut
@@ -28,6 +29,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
+# pyrefly: ignore [missing-import]
 import shap
 
 print("=" * 70)
@@ -36,7 +38,7 @@ print("=" * 70)
 
 # ── Config ───────────────────────────────────────────────────────────────────
 OUTPUT_DIR = os.path.join("data", "processed")
-DATA_PATH  = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.pkl")
+DATA_PATH  = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.csv")
 CSV_OUT    = os.path.join(OUTPUT_DIR, "shap_feature_importance.csv")
 PKL_OUT    = os.path.join(OUTPUT_DIR, "shap_values_cache.pkl")
 
@@ -47,7 +49,7 @@ RANDOM_STATE = 42
 
 # ── 1. Load Data ─────────────────────────────────────────────────────────────
 print("\n[1/4] Loading multimodal dataset...")
-df = pd.read_pickle(DATA_PATH)
+df = pd.read_csv(DATA_PATH)
 
 vis_cols = sorted([c for c in df.columns if c.startswith('vis_feat_')],
                   key=lambda c: int(c.split('_')[-1]))

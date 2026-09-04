@@ -40,7 +40,7 @@ print("=" * 70)
 
 # ── Config ───────────────────────────────────────────────────────────────────
 OUTPUT_DIR    = os.path.join("data", "processed")
-DATA_PATH     = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.pkl")
+DATA_PATH     = os.path.join(OUTPUT_DIR, "multimodal_dataset_n17.csv")
 PRED_CSV_PATH = os.path.join(OUTPUT_DIR, "baseline_lr_predictions.csv")
 
 CLINICAL_COLS = ['LBC', 'MTB', 'WOS', 'TVF', 'MLE', 'TM', 'Age']
@@ -50,7 +50,7 @@ RANDOM_STATE  = 42
 
 # ── 1. Load Data ─────────────────────────────────────────────────────────────
 print("\n[1/5] Loading multimodal dataset...")
-df = pd.read_pickle(DATA_PATH)
+df = pd.read_csv(DATA_PATH)
 print(f"      Full dataset shape: {df.shape}")
 
 # Verify all clinical columns exist
@@ -123,7 +123,7 @@ for fold_idx, (train_idx, test_idx) in enumerate(logo.split(X, y, groups)):
     pred_label = 'Complete' if y_pred == 0 else 'Incomplete'
     correct = '✔' if y_pred == y_test[0] else '✘'
 
-    print(f"      {fold_idx+1:4d}  {test_case:>8s}  {true_label:>9s}  "
+    print(f"      {fold_idx+1:4d}  {str(test_case):>8s}  {true_label:>9s}  "
           f"{pred_label:>9s}  {y_prob:>9.4f}  {best_C:>6.2f}  {correct:>7s}")
 
     fold_results.append({

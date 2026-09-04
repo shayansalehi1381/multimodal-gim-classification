@@ -20,5 +20,10 @@ data/filtered_frames/
 *.avi
 *.mov
 
+# Intermediate binary artifacts & heavy tables
+*.npy
+*.pkl
+data/processed/*.xlsx
+
 # Note: data/processed/ and figures/ are intentionally NOT ignored
 # to preserve the processed embeddings and evaluation results.

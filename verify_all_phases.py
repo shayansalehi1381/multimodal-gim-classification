@@ -80,7 +80,10 @@ print("└" + "─"*68 + "┘")
 print("\n┌─ 2. DATA SHAPES " + "─"*51 + "┐")
 
 frames_dir = "data/filtered_frames"
-n_frames = len([f for f in os.listdir(frames_dir) if f.lower().endswith(('.jpg','.jpeg','.png'))])
+if os.path.exists(frames_dir):
+    n_frames = len([f for f in os.listdir(frames_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))])
+else:
+    n_frames = len([f for f in os.listdir('.') if f.lower().endswith(('.jpg', '.jpeg', '.png'))])
 frame_check = "✔" if n_frames == 2016 else "⚠"
 
 df_mm = pd.read_csv(P("data","processed","multimodal_dataset_n17.csv"))

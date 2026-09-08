@@ -39,11 +39,13 @@ IMG_DIRS = [os.path.join("data", "filtered_frames"), "."]
 FIG_DIR = "figures"
 os.makedirs(FIG_DIR, exist_ok=True)
 
-# Select 2 Incomplete (2601, 2605) and 2 Complete (2602, 2603)
+# Select 3 Incomplete (2601, 2602, 2605) and 1 Complete (2603).
+# Case 2602 histology: "Complete + Incomplete (Body)".
+# Binary risk rule: any presence of Incomplete GIM → label 'Incomplete'.
 TARGET_CASES = {
     '2601': 'Incomplete',
     '2605': 'Incomplete',
-    '2602': 'Complete',
+    '2602': 'Incomplete',   # FIX: was 'Complete'; histology is Complete+Incomplete → binary label = Incomplete
     '2603': 'Complete'
 }
 

@@ -1,0 +1,20 @@
+{
+ "features": [
+  "mean_r",
+  "mean_g",
+  "mean_b",
+  "r_over_g",
+  "g_over_b",
+  "r_over_b",
+  "sat",
+  "val",
+  "std_gray"
+ ],
+ "n_labelled": 385,
+ "n_wli": 81,
+ "oof_auc": 0.9559372969460689,
+ "threshold": 0.3617807009683174,
+ "youden_j": 0.8149366471734893,
+ "sensitivity_wli": 0.9629629629629629,
+ "specificity_wli": 0.8519736842105263
+}

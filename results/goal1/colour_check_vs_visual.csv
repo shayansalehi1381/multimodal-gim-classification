@@ -1,0 +1,6 @@
+check,auc,accuracy,balanced_accuracy
+"WLI vs NBI, colour LR (out-of-fold)",0.956,0.896,0.893
+"WLI vs NBI, r_over_g alone",0.937,,
+"ME_NBI vs all others, colour+texture LR (out-of-fold)",0.807,0.758,0.742
+"ME_NBI vs NBI_nonmag, hf_ratio alone",0.586,,
+"ME_NBI vs NBI_nonmag, lap_var alone",0.499,,

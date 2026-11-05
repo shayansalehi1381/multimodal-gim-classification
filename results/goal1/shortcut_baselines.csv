@@ -1,0 +1,157 @@
+task,shortcut,model,n_patients,class_counts,auc,auc_lo,auc_hi,bal_acc,bal_acc_lo,bal_acc_hi
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",resolution_aspect,LR,680,250/430,0.55,0.502,0.594,0.55,0.511,0.588
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",resolution_aspect,RF,680,250/430,0.607,0.564,0.651,0.576,0.54,0.612
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",file_size,LR,680,250/430,0.643,0.6,0.691,0.608,0.57,0.649
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",file_size,RF,680,250/430,0.614,0.569,0.66,0.602,0.566,0.639
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",images_per_patient_capped,LR,680,250/430,0.557,0.511,0.601,0.575,0.539,0.613
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",images_per_patient_capped,RF,680,250/430,0.55,0.505,0.597,0.572,0.535,0.607
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",colour_modality_proxy,LR,680,250/430,0.717,0.676,0.755,0.65,0.612,0.686
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",colour_modality_proxy,RF,680,250/430,0.767,0.727,0.801,0.677,0.642,0.712
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",border_glare,LR,680,250/430,0.614,0.568,0.663,0.582,0.545,0.622
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",border_glare,RF,680,250/430,0.654,0.61,0.699,0.63,0.593,0.667
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",jpeg_tables,LR,680,250/430,0.5,0.5,0.5,0.5,0.5,0.5
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",jpeg_tables,RF,680,250/430,0.491,0.449,0.533,0.5,0.5,0.5
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",images_per_patient_uncapped,LR,680,250/430,0.542,0.494,0.59,0.538,0.499,0.576
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",images_per_patient_uncapped,RF,680,250/430,0.576,0.529,0.624,0.58,0.541,0.62
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",year,LR,680,250/430,0.572,0.526,0.614,0.608,0.574,0.64
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",year,RF,680,250/430,0.574,0.528,0.615,0.608,0.574,0.64
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",year_month,LR,680,250/430,0.623,0.58,0.668,0.609,0.575,0.644
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",year_month,RF,680,250/430,0.63,0.584,0.675,0.633,0.592,0.67
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",device_metadata,LR,680,250/430,0.489,0.443,0.535,0.516,0.486,0.545
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",device_metadata,RF,680,250/430,0.495,0.449,0.543,0.518,0.489,0.549
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",sex_age_metadata,LR,680,250/430,0.659,0.616,0.7,0.642,0.605,0.677
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",sex_age_metadata,RF,680,250/430,0.644,0.601,0.685,0.644,0.608,0.679
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",ALL_image_visible,LR,680,250/430,0.785,0.749,0.819,0.712,0.675,0.748
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",ALL_image_visible,RF,680,250/430,0.807,0.772,0.84,0.722,0.688,0.758
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",image_visible_no_colour,LR,680,250/430,0.644,0.6,0.688,0.601,0.564,0.641
+"A2 IM&CG vs LGIN+HGIN+EGC, 2018-2021",image_visible_no_colour,RF,680,250/430,0.758,0.724,0.795,0.68,0.643,0.718
+A2 all years (only to show the year effect),resolution_aspect,LR,868,438/430,0.553,0.513,0.589,0.507,0.484,0.53
+A2 all years (only to show the year effect),resolution_aspect,RF,868,438/430,0.674,0.639,0.71,0.647,0.616,0.679
+A2 all years (only to show the year effect),file_size,LR,868,438/430,0.674,0.636,0.71,0.65,0.617,0.681
+A2 all years (only to show the year effect),file_size,RF,868,438/430,0.683,0.647,0.719,0.652,0.62,0.685
+A2 all years (only to show the year effect),images_per_patient_capped,LR,868,438/430,0.548,0.509,0.587,0.565,0.534,0.594
+A2 all years (only to show the year effect),images_per_patient_capped,RF,868,438/430,0.573,0.537,0.613,0.546,0.515,0.575
+A2 all years (only to show the year effect),colour_modality_proxy,LR,868,438/430,0.765,0.734,0.794,0.709,0.681,0.737
+A2 all years (only to show the year effect),colour_modality_proxy,RF,868,438/430,0.832,0.803,0.858,0.755,0.725,0.781
+A2 all years (only to show the year effect),border_glare,LR,868,438/430,0.664,0.628,0.699,0.607,0.572,0.637
+A2 all years (only to show the year effect),border_glare,RF,868,438/430,0.701,0.665,0.733,0.657,0.624,0.689
+A2 all years (only to show the year effect),jpeg_tables,LR,868,438/430,0.5,0.5,0.5,0.5,0.5,0.5
+A2 all years (only to show the year effect),jpeg_tables,RF,868,438/430,0.502,0.463,0.541,0.5,0.5,0.5
+A2 all years (only to show the year effect),images_per_patient_uncapped,LR,868,438/430,0.529,0.49,0.567,0.525,0.491,0.558
+A2 all years (only to show the year effect),images_per_patient_uncapped,RF,868,438/430,0.627,0.588,0.665,0.577,0.543,0.611
+A2 all years (only to show the year effect),year,LR,868,438/430,0.759,0.727,0.791,0.715,0.694,0.739
+A2 all years (only to show the year effect),year,RF,868,438/430,0.759,0.727,0.791,0.715,0.694,0.739
+A2 all years (only to show the year effect),year_month,LR,868,438/430,0.786,0.756,0.815,0.718,0.693,0.743
+A2 all years (only to show the year effect),year_month,RF,868,438/430,0.788,0.759,0.82,0.718,0.689,0.746
+A2 all years (only to show the year effect),device_metadata,LR,868,438/430,0.617,0.578,0.653,0.645,0.616,0.672
+A2 all years (only to show the year effect),device_metadata,RF,868,438/430,0.628,0.591,0.664,0.642,0.614,0.67
+A2 all years (only to show the year effect),sex_age_metadata,LR,868,438/430,0.63,0.591,0.669,0.603,0.57,0.638
+A2 all years (only to show the year effect),sex_age_metadata,RF,868,438/430,0.62,0.582,0.658,0.605,0.572,0.639
+A2 all years (only to show the year effect),ALL_image_visible,LR,868,438/430,0.829,0.801,0.853,0.75,0.721,0.779
+A2 all years (only to show the year effect),ALL_image_visible,RF,868,438/430,0.87,0.846,0.891,0.787,0.758,0.813
+A2 all years (only to show the year effect),image_visible_no_colour,LR,868,438/430,0.703,0.668,0.738,0.653,0.623,0.685
+A2 all years (only to show the year effect),image_visible_no_colour,RF,868,438/430,0.808,0.779,0.834,0.707,0.675,0.736
+"A2 without LGIN, 2018-2021",resolution_aspect,LR,601,171/430,0.592,0.54,0.647,0.584,0.544,0.629
+"A2 without LGIN, 2018-2021",resolution_aspect,RF,601,171/430,0.653,0.607,0.696,0.643,0.605,0.682
+"A2 without LGIN, 2018-2021",file_size,LR,601,171/430,0.731,0.681,0.772,0.67,0.627,0.709
+"A2 without LGIN, 2018-2021",file_size,RF,601,171/430,0.676,0.624,0.721,0.638,0.593,0.678
+"A2 without LGIN, 2018-2021",images_per_patient_capped,LR,601,171/430,0.701,0.655,0.746,0.675,0.636,0.715
+"A2 without LGIN, 2018-2021",images_per_patient_capped,RF,601,171/430,0.679,0.631,0.724,0.683,0.645,0.721
+"A2 without LGIN, 2018-2021",colour_modality_proxy,LR,601,171/430,0.76,0.715,0.799,0.7,0.658,0.739
+"A2 without LGIN, 2018-2021",colour_modality_proxy,RF,601,171/430,0.743,0.697,0.785,0.69,0.646,0.73
+"A2 without LGIN, 2018-2021",border_glare,LR,601,171/430,0.545,0.493,0.599,0.518,0.473,0.563
+"A2 without LGIN, 2018-2021",border_glare,RF,601,171/430,0.634,0.583,0.683,0.625,0.584,0.669
+"A2 without LGIN, 2018-2021",jpeg_tables,LR,601,171/430,0.5,0.5,0.5,0.5,0.5,0.5
+"A2 without LGIN, 2018-2021",jpeg_tables,RF,601,171/430,0.511,0.461,0.566,0.5,0.5,0.5
+"A2 without LGIN, 2018-2021",images_per_patient_uncapped,LR,601,171/430,0.727,0.685,0.767,0.683,0.645,0.721
+"A2 without LGIN, 2018-2021",images_per_patient_uncapped,RF,601,171/430,0.694,0.65,0.736,0.685,0.648,0.723
+"A2 without LGIN, 2018-2021",year,LR,601,171/430,0.599,0.547,0.644,0.642,0.607,0.675
+"A2 without LGIN, 2018-2021",year,RF,601,171/430,0.599,0.547,0.645,0.642,0.607,0.675
+"A2 without LGIN, 2018-2021",year_month,LR,601,171/430,0.649,0.598,0.694,0.647,0.609,0.679
+"A2 without LGIN, 2018-2021",year_month,RF,601,171/430,0.681,0.634,0.728,0.654,0.612,0.696
+"A2 without LGIN, 2018-2021",device_metadata,LR,601,171/430,0.475,0.424,0.525,0.503,0.46,0.544
+"A2 without LGIN, 2018-2021",device_metadata,RF,601,171/430,0.47,0.418,0.521,0.484,0.447,0.521
+"A2 without LGIN, 2018-2021",sex_age_metadata,LR,601,171/430,0.679,0.632,0.726,0.64,0.602,0.678
+"A2 without LGIN, 2018-2021",sex_age_metadata,RF,601,171/430,0.661,0.612,0.708,0.636,0.59,0.676
+"A2 without LGIN, 2018-2021",ALL_image_visible,LR,601,171/430,0.799,0.759,0.834,0.728,0.687,0.766
+"A2 without LGIN, 2018-2021",ALL_image_visible,RF,601,171/430,0.788,0.751,0.823,0.702,0.663,0.743
+"A2 without LGIN, 2018-2021",image_visible_no_colour,LR,601,171/430,0.719,0.668,0.76,0.673,0.629,0.712
+"A2 without LGIN, 2018-2021",image_visible_no_colour,RF,601,171/430,0.761,0.721,0.798,0.666,0.625,0.705
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",resolution_aspect,LR,512,160/352,0.54,0.485,0.592,0.52,0.475,0.564
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",resolution_aspect,RF,512,160/352,0.572,0.522,0.625,0.566,0.52,0.612
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",file_size,LR,512,160/352,0.592,0.535,0.648,0.58,0.536,0.625
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",file_size,RF,512,160/352,0.602,0.547,0.659,0.587,0.543,0.634
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",images_per_patient_capped,LR,512,160/352,0.616,0.556,0.673,0.626,0.579,0.673
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",images_per_patient_capped,RF,512,160/352,0.577,0.52,0.634,0.626,0.579,0.673
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",colour_modality_proxy,LR,512,160/352,0.692,0.641,0.737,0.632,0.585,0.675
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",colour_modality_proxy,RF,512,160/352,0.726,0.675,0.773,0.651,0.604,0.692
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",border_glare,LR,512,160/352,0.489,0.432,0.542,0.538,0.505,0.572
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",border_glare,RF,512,160/352,0.584,0.528,0.643,0.581,0.537,0.628
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",jpeg_tables,LR,512,160/352,0.5,0.5,0.5,0.5,0.5,0.5
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",jpeg_tables,RF,512,160/352,0.513,0.463,0.564,0.5,0.5,0.5
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",images_per_patient_uncapped,LR,512,160/352,0.645,0.59,0.696,0.616,0.569,0.66
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",images_per_patient_uncapped,RF,512,160/352,0.595,0.54,0.651,0.605,0.557,0.653
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",year,LR,512,160/352,0.571,0.52,0.626,0.597,0.552,0.641
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",year,RF,512,160/352,0.571,0.52,0.626,0.597,0.552,0.641
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",year_month,LR,512,160/352,0.627,0.58,0.676,0.588,0.545,0.634
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",year_month,RF,512,160/352,0.621,0.567,0.674,0.586,0.54,0.636
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",device_metadata,LR,512,160/352,0.471,0.418,0.524,0.528,0.499,0.564
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",device_metadata,RF,512,160/352,0.474,0.422,0.529,0.525,0.494,0.562
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",sex_age_metadata,LR,512,160/352,0.679,0.625,0.73,0.653,0.605,0.697
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",sex_age_metadata,RF,512,160/352,0.65,0.597,0.703,0.663,0.616,0.706
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",ALL_image_visible,LR,512,160/352,0.759,0.715,0.802,0.688,0.646,0.729
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",ALL_image_visible,RF,512,160/352,0.763,0.718,0.805,0.696,0.655,0.739
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",image_visible_no_colour,LR,512,160/352,0.615,0.561,0.666,0.582,0.536,0.625
+"A2 predicted ME-NBI images only, patients with >=3, 2018-2021",image_visible_no_colour,RF,512,160/352,0.69,0.64,0.74,0.661,0.616,0.704
+"B 4-class, all years",resolution_aspect,LR,868,167/125/146/430,0.55,0.523,0.577,0.313,0.287,0.336
+"B 4-class, all years",resolution_aspect,RF,868,167/125/146/430,0.629,0.602,0.655,0.351,0.319,0.382
+"B 4-class, all years",file_size,LR,868,167/125/146/430,0.665,0.641,0.687,0.376,0.343,0.41
+"B 4-class, all years",file_size,RF,868,167/125/146/430,0.657,0.631,0.682,0.372,0.338,0.405
+"B 4-class, all years",images_per_patient_capped,LR,868,167/125/146/430,0.692,0.669,0.713,0.453,0.427,0.48
+"B 4-class, all years",images_per_patient_capped,RF,868,167/125/146/430,0.665,0.642,0.688,0.434,0.407,0.459
+"B 4-class, all years",colour_modality_proxy,LR,868,167/125/146/430,0.802,0.782,0.821,0.572,0.539,0.604
+"B 4-class, all years",colour_modality_proxy,RF,868,167/125/146/430,0.811,0.792,0.83,0.595,0.563,0.631
+"B 4-class, all years",border_glare,LR,868,167/125/146/430,0.607,0.586,0.628,0.37,0.345,0.398
+"B 4-class, all years",border_glare,RF,868,167/125/146/430,0.674,0.649,0.699,0.433,0.401,0.465
+"B 4-class, all years",jpeg_tables,LR,868,167/125/146/430,0.5,0.5,0.5,0.25,0.25,0.25
+"B 4-class, all years",jpeg_tables,RF,868,167/125/146/430,0.502,0.472,0.528,0.25,0.25,0.25
+"B 4-class, all years",images_per_patient_uncapped,LR,868,167/125/146/430,0.752,0.73,0.771,0.497,0.468,0.527
+"B 4-class, all years",images_per_patient_uncapped,RF,868,167/125/146/430,0.714,0.692,0.735,0.463,0.432,0.496
+"B 4-class, all years",year,LR,868,167/125/146/430,0.647,0.622,0.671,0.387,0.354,0.423
+"B 4-class, all years",year,RF,868,167/125/146/430,0.649,0.625,0.673,0.384,0.349,0.42
+"B 4-class, all years",year_month,LR,868,167/125/146/430,0.672,0.647,0.694,0.372,0.335,0.408
+"B 4-class, all years",year_month,RF,868,167/125/146/430,0.635,0.609,0.659,0.349,0.318,0.38
+"B 4-class, all years",device_metadata,LR,868,167/125/146/430,0.565,0.535,0.595,0.335,0.31,0.364
+"B 4-class, all years",device_metadata,RF,868,167/125/146/430,0.564,0.535,0.593,0.339,0.312,0.368
+"B 4-class, all years",sex_age_metadata,LR,868,167/125/146/430,0.59,0.565,0.615,0.329,0.297,0.363
+"B 4-class, all years",sex_age_metadata,RF,868,167/125/146/430,0.566,0.542,0.591,0.324,0.293,0.354
+"B 4-class, all years",ALL_image_visible,LR,868,167/125/146/430,0.837,0.819,0.853,0.597,0.562,0.632
+"B 4-class, all years",ALL_image_visible,RF,868,167/125/146/430,0.84,0.823,0.856,0.583,0.554,0.614
+"B 4-class, all years",image_visible_no_colour,LR,868,167/125/146/430,0.729,0.707,0.752,0.45,0.417,0.483
+"B 4-class, all years",image_visible_no_colour,RF,868,167/125/146/430,0.774,0.75,0.794,0.512,0.477,0.546
+"B 4-class, 2018-2021",resolution_aspect,LR,680,94/77/79/430,0.543,0.508,0.576,0.319,0.279,0.359
+"B 4-class, 2018-2021",resolution_aspect,RF,680,94/77/79/430,0.595,0.563,0.626,0.347,0.302,0.385
+"B 4-class, 2018-2021",file_size,LR,680,94/77/79/430,0.651,0.619,0.682,0.37,0.321,0.416
+"B 4-class, 2018-2021",file_size,RF,680,94/77/79/430,0.612,0.577,0.647,0.328,0.285,0.371
+"B 4-class, 2018-2021",images_per_patient_capped,LR,680,94/77/79/430,0.675,0.647,0.707,0.452,0.418,0.487
+"B 4-class, 2018-2021",images_per_patient_capped,RF,680,94/77/79/430,0.653,0.622,0.684,0.413,0.378,0.45
+"B 4-class, 2018-2021",colour_modality_proxy,LR,680,94/77/79/430,0.803,0.778,0.828,0.606,0.567,0.649
+"B 4-class, 2018-2021",colour_modality_proxy,RF,680,94/77/79/430,0.784,0.76,0.809,0.559,0.52,0.6
+"B 4-class, 2018-2021",border_glare,LR,680,94/77/79/430,0.601,0.576,0.626,0.356,0.316,0.393
+"B 4-class, 2018-2021",border_glare,RF,680,94/77/79/430,0.699,0.668,0.728,0.441,0.397,0.485
+"B 4-class, 2018-2021",jpeg_tables,LR,680,94/77/79/430,0.5,0.5,0.5,0.25,0.25,0.25
+"B 4-class, 2018-2021",jpeg_tables,RF,680,94/77/79/430,0.507,0.486,0.531,0.25,0.25,0.25
+"B 4-class, 2018-2021",images_per_patient_uncapped,LR,680,94/77/79/430,0.738,0.709,0.767,0.486,0.447,0.527
+"B 4-class, 2018-2021",images_per_patient_uncapped,RF,680,94/77/79/430,0.685,0.654,0.716,0.421,0.378,0.468
+"B 4-class, 2018-2021",year,LR,680,94/77/79/430,0.543,0.508,0.575,0.362,0.32,0.403
+"B 4-class, 2018-2021",year,RF,680,94/77/79/430,0.543,0.509,0.576,0.362,0.32,0.403
+"B 4-class, 2018-2021",year_month,LR,680,94/77/79/430,0.588,0.553,0.622,0.357,0.314,0.399
+"B 4-class, 2018-2021",year_month,RF,680,94/77/79/430,0.578,0.542,0.611,0.317,0.275,0.364
+"B 4-class, 2018-2021",device_metadata,LR,680,94/77/79/430,0.452,0.42,0.486,0.251,0.211,0.291
+"B 4-class, 2018-2021",device_metadata,RF,680,94/77/79/430,0.457,0.423,0.492,0.246,0.207,0.285
+"B 4-class, 2018-2021",sex_age_metadata,LR,680,94/77/79/430,0.598,0.567,0.629,0.335,0.294,0.377
+"B 4-class, 2018-2021",sex_age_metadata,RF,680,94/77/79/430,0.571,0.54,0.602,0.34,0.298,0.385
+"B 4-class, 2018-2021",ALL_image_visible,LR,680,94/77/79/430,0.825,0.802,0.847,0.593,0.551,0.632
+"B 4-class, 2018-2021",ALL_image_visible,RF,680,94/77/79/430,0.817,0.794,0.841,0.566,0.527,0.607
+"B 4-class, 2018-2021",image_visible_no_colour,LR,680,94/77/79/430,0.715,0.686,0.742,0.463,0.421,0.504
+"B 4-class, 2018-2021",image_visible_no_colour,RF,680,94/77/79/430,0.759,0.73,0.786,0.465,0.419,0.511

@@ -1,0 +1,5 @@
+label,visual_ME_pct,pred_ME_pct,agreement_pct
+EGC,95.0,72.0,75.0
+HGIN,95.0,76.0,75.0
+IM&CG,79.0,82.0,75.0
+LGIN,2.0,22.0,78.0

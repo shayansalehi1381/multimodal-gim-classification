@@ -1,0 +1,7 @@
+alteration,auc_all,auc_vs_EGC,auc_vs_HGIN,auc_vs_LGIN
+original,0.9004,0.9257,0.9592,0.8339
+center_only,0.8582,0.9179,0.9011,0.7698
+border_only,0.8376,0.8685,0.8925,0.7685
+blur_16px,0.7038,0.7553,0.7146,0.6462
+patch_shuffle_16,0.8762,0.9229,0.9283,0.7937
+gray,0.8866,0.902,0.9435,0.8311

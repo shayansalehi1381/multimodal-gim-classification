@@ -1,0 +1,5 @@
+label,images,pred_WLI_pct,pred_ME_NBI_pct,patient_median_ME_frac,patients_ge3_ME,patients_ge1_ME,patients_ge3_ME_2018_2021
+EGC,1007,12.02,78.65,1.0,88,143,56
+HGIN,627,10.85,82.93,1.0,72,110,44
+IM&CG,5518,14.14,80.55,0.88,352,414,352
+LGIN,4819,70.91,20.21,0.18,102,135,60

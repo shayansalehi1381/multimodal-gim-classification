@@ -1,0 +1,34 @@
+dataset,embedding,negative_class,n_neg,auc
+A2-NBI,biomedclip,EGC,61,0.998
+A2-NBI,biomedclip,HGIN,45,0.9995
+A2-NBI,biomedclip,LGIN,63,0.9856
+A2-NBI,biomedclip,year 2018,54,0.9974
+A2-NBI,biomedclip,year 2019,40,0.9847
+A2-NBI,biomedclip,year 2020,34,0.9979
+A2-NBI,biomedclip,year 2021,41,0.9947
+A2-NBI,dinov2,EGC,61,1.0
+A2-NBI,dinov2,HGIN,45,0.9997
+A2-NBI,dinov2,LGIN,63,0.9977
+A2-NBI,dinov2,year 2018,54,0.9987
+A2-NBI,dinov2,year 2019,40,1.0
+A2-NBI,dinov2,year 2020,34,0.9992
+A2-NBI,dinov2,year 2021,41,0.9984
+S1,biomedclip,EGC,94,0.9846
+S1,biomedclip,HGIN,77,0.9883
+S1,biomedclip,LGIN,79,0.9862
+S1,biomedclip,year 2018,87,0.9984
+S1,biomedclip,year 2019,63,0.9929
+S1,biomedclip,year 2020,45,0.9916
+S1,biomedclip,year 2021,55,0.9405
+S2,biomedclip,EGC,94,0.9938
+S2,biomedclip,HGIN,77,0.9922
+S2,biomedclip,year 2018,68,0.9949
+S2,biomedclip,year 2019,44,0.9942
+S2,biomedclip,year 2020,19,0.9995
+S2,biomedclip,year 2021,40,0.9723
+S3,biomedclip,EGC,61,0.9995
+S3,biomedclip,HGIN,45,0.9996
+S3,biomedclip,year 2018,43,0.9991
+S3,biomedclip,year 2019,24,0.9998
+S3,biomedclip,year 2020,12,0.9991
+S3,biomedclip,year 2021,27,0.9998

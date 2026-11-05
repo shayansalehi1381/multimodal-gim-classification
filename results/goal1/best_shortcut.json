@@ -1,0 +1,62 @@
+{
+ "A2-NBI": {
+  "dataset": "A2-NBI",
+  "shortcut": "ALL_five_groups",
+  "model": "RF",
+  "n_patients": 530,
+  "n_pos": 361,
+  "auc": 0.7669,
+  "auc_lo": 0.7269,
+  "auc_hi": 0.8045,
+  "bal_acc": 0.6964,
+  "bal_acc_lo": 0.6625,
+  "bal_acc_hi": 0.7293,
+  "auc_repeat_min": 0.7554,
+  "auc_repeat_max": 0.7755
+ },
+ "S1": {
+  "dataset": "S1",
+  "shortcut": "ALL_five_groups",
+  "model": "RF",
+  "n_patients": 680,
+  "n_pos": 430,
+  "auc": 0.8175,
+  "auc_lo": 0.7849,
+  "auc_hi": 0.8483,
+  "bal_acc": 0.7216,
+  "bal_acc_lo": 0.6908,
+  "bal_acc_hi": 0.7515,
+  "auc_repeat_min": 0.8134,
+  "auc_repeat_max": 0.819
+ },
+ "S2": {
+  "dataset": "S2",
+  "shortcut": "ALL_five_groups",
+  "model": "RF",
+  "n_patients": 601,
+  "n_pos": 430,
+  "auc": 0.8083,
+  "auc_lo": 0.7737,
+  "auc_hi": 0.8407,
+  "bal_acc": 0.7274,
+  "bal_acc_lo": 0.6945,
+  "bal_acc_hi": 0.7588,
+  "auc_repeat_min": 0.8044,
+  "auc_repeat_max": 0.8139
+ },
+ "S3": {
+  "dataset": "S3",
+  "shortcut": "ALL_five_groups",
+  "model": "RF",
+  "n_patients": 467,
+  "n_pos": 361,
+  "auc": 0.8028,
+  "auc_lo": 0.7629,
+  "auc_hi": 0.8413,
+  "bal_acc": 0.7353,
+  "bal_acc_lo": 0.6997,
+  "bal_acc_hi": 0.7698,
+  "auc_repeat_min": 0.7899,
+  "auc_repeat_max": 0.8253
+ }
+}

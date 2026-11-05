@@ -1,0 +1,10 @@
+factor,level,Complete,Incomplete,fisher_p_2x2
+source,stills only,5,7,0.6199095022624436
+source,video frames only,3,2,0.6199095022624436
+file_type,jpg stills,5,4,
+file_type,png stills,0,3,
+file_type,video frames,3,2,
+processor,190,0,2,0.47058823529411764
+processor,X1,8,7,0.47058823529411764
+OSD_text_panel,absent,5,4,0.6371863430686961
+OSD_text_panel,present,3,5,0.6371863430686961

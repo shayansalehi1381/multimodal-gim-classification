@@ -1,0 +1,18 @@
+Case Code,Subtype,Media Type,Processor,Scope,n_frames,source_used,svc_pred,svc_prob
+2601,Incomplete,Image,,,1,stills only,0,0.136
+2602,Incomplete,Image,,,3,stills only,1,0.447
+2603,Complete,Image,EVIS X1 (CV-1500),CF-EZ1500DL,2,stills only,0,0.658
+2604,Complete,Image,,,1,stills only,0,0.632
+2605,Incomplete,Image,EVIS X1 (CV-1500),CF-EZ1500DL,4,stills only,0,0.28
+2606,Complete,Image,EVIS X1 (CV-1500),CF-H190L,1,stills only,0,0.146
+2607,Complete,Image,EVIS X1 (CV-1500),CF-EZ1500DL,3,stills only,0,0.522
+2608,Complete,Image,,,10,stills only,0,0.247
+2610,Incomplete,Image & Video,EVIS X1 (CV-1500),CF-EZ1500DL,251,video frames only,1,0.642
+2611,Incomplete,Image,EVIS X1 (CV-1500),CF-EZ1500DL,5,stills only,1,0.809
+2613,Incomplete,Image,EVIS X1 (CV-1500),CF-EZ1500DL,4,stills only,1,0.614
+2614,Incomplete,Image,CV-190,CF-H190L,2,stills only,0,0.488
+2615,Incomplete,Image,CV-190,CF-H190L,4,stills only,1,0.816
+2619,Complete,Image & Video,,,153,video frames only,0,0.251
+2620,Incomplete,Image & Video,EVIS X1 (CV-1500),CF-H190L,100,video frames only,1,0.741
+2622,Complete,Image & Video,EVIS X1 (CV-1500),CF-H190L,454,video frames only,0,0.375
+2625,Complete,Image & Video,EVIS X1 (CV-1500),,100,video frames only,0,0.423

@@ -1,0 +1,8 @@
+quantity,reproduced,v1_claim
+champion accuracy,0.8235294117647058,0.8235294117647058
+champion correct,14/17,14/17
+champion F1,0.8,0.8
+champion AUC,0.6944444444444444,0.694
+champion acc CI,"[0.588, 1.000]","[0.588, 1.000]"
+champion AUC CI,"[0.414, 0.933]","[0.414, 0.933]"
+McNemar p vs baseline,0.0654296875,0.0654

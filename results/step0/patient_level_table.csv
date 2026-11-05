@@ -1,0 +1,18 @@
+Case Code,histology_label,mixed_histology,visual_source_v1,file_type,processor,OSD_text_panel,v1_champion_prob,v1_champion_threshold,v1_champion_correct,a_clinical/LR_score,a_clinical/LR_correct,a_clinical/RF_score,a_clinical/RF_correct,b_biomedclip/LR_score,b_biomedclip/LR_correct,b_biomedclip/RF_score,b_biomedclip/RF_correct,e_visual+clinical/LR_score,e_visual+clinical/LR_correct
+2601,Incomplete,False,stills only,jpg stills,X1,absent,0.1359,0.4,False,0.4752,False,0.69,True,1.0,True,0.77,True,0.8926,True
+2602,Incomplete,True,stills only,jpg stills,X1,absent,0.4467,0.35,True,0.7135,True,0.77,True,1.0,True,0.75,True,0.5843,False
+2603,Complete,False,stills only,jpg stills,X1,absent,0.6585,0.6900000000000001,True,0.248,True,0.59,True,0.0,True,0.71,False,0.399,True
+2604,Complete,False,stills only,jpg stills,X1,absent,0.6315,0.64,True,0.7673,False,0.41,True,0.0643,False,0.1776,True,0.5587,True
+2605,Incomplete,False,stills only,jpg stills,X1,absent,0.2799,0.5700000000000001,False,0.6323,False,0.74,True,0.79,True,0.57,True,0.8944,True
+2606,Complete,False,stills only,jpg stills,X1,absent,0.1461,0.6,True,0.6027,False,0.56,False,0.9999,False,0.82,False,1.0,False
+2607,Complete,False,stills only,jpg stills,X1,absent,0.5221,0.5800000000000001,True,0.4145,True,0.45,True,0.0,True,0.1243,True,0.9964,True
+2608,Complete,False,stills only,jpg stills,X1,absent,0.2466,0.6,True,0.9648,False,0.94,False,0.8423,False,0.78,True,0.751,False
+2610,Incomplete,False,video frames only,video frames,X1,present,0.642,0.4,True,0.1464,False,0.26,False,0.0019,False,0.2401,False,0.5899,True
+2611,Incomplete,True,stills only,jpg stills,X1,absent,0.8091,0.45,True,0.5783,False,0.69,True,0.0,False,0.39,False,0.0153,False
+2613,Incomplete,False,stills only,png stills,X1,present,0.6142,0.51,True,0.7828,True,0.42,False,0.9138,True,0.72,True,0.4197,False
+2614,Incomplete,False,stills only,png stills,190,present,0.4881,0.5800000000000001,False,0.7174,True,0.4,False,1.0,True,0.78,True,0.5949,False
+2615,Incomplete,False,stills only,png stills,190,present,0.8163,0.48,True,0.3449,False,0.55,True,0.0,False,0.78,True,0.1149,False
+2619,Complete,False,video frames only,video frames,X1,present,0.2515,0.65,True,0.6857,False,0.24,True,0.6198,True,0.67,True,0.6587,False
+2620,Incomplete,False,video frames only,video frames,X1,present,0.7413,0.56,True,0.0,False,0.01,False,0.2675,False,0.24,False,0.0,False
+2622,Complete,False,video frames only,video frames,X1,present,0.3747,0.6,True,0.2161,True,0.32,True,0.0589,True,0.3436,True,0.6466,True
+2625,Complete,False,video frames only,video frames,X1,present,0.4231,0.5800000000000001,True,0.6212,False,0.2,True,0.0,True,0.33,True,0.4872,True

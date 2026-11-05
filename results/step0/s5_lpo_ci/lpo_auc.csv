@@ -1,0 +1,12 @@
+model,lpo_auc,n_pairs
+v1_champion_SVC8,0.5555555555555556,72
+a_clinical/LR,0.4583333333333333,72
+a_clinical/SVC,0.6944444444444444,72
+b_biomedclip/LR,0.6388888888888888,72
+b_biomedclip/SVC,0.5972222222222222,72
+c_dinov2/LR,0.3472222222222222,72
+c_dinov2/SVC,0.25,72
+d_both_visual/LR,0.4722222222222222,72
+d_both_visual/SVC,0.3888888888888889,72
+e_visual+clinical/LR,0.375,72
+e_visual+clinical/SVC,0.4027777777777778,72

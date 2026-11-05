@@ -1,0 +1,19 @@
+Loading weights:   0%|          | 0/223 [00:00<?, ?it/s]Loading weights: 100%|██████████| 223/223 [00:00<00:00, 5431.62it/s]
+  0/2074
+  400/2074
+  800/2074
+  1200/2074
+  1600/2074
+  2000/2074
+  0/98
+
+FOV estimated per capture layout (resolution): 15 layouts covering 137 sources (39 videos, 98 stills); see fov_layouts.csv.
+QC montages: results/step0/figures/fov_qc_*.png (green = FOV hull, red = crop).
+Crop scale vs FOV bbox: median 0.88 (min 0.86).
+Share of the v1 model input (center square) that lay outside the FOV, i.e. black border or on-screen text:
+BiomedCLIP median 15.1% (videos 15.1%,
+stills 0.0%, max 27.5%).
+Embeddings cached: step0/embeddings_cropped/ (2074 items x 512 / 768) and step0/embeddings_raw/ (98 raw stills).
+Check: raw-still embeddings recomputed here vs the v1 embeddings of the same 40 stills: cosine BiomedCLIP min 1.0000,
+DINOv2 min 1.0000 (1.0 = identical preprocessing).
+

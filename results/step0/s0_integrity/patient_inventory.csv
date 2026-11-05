@@ -1,0 +1,25 @@
+Case Code,n_images,n_videos,img_ext,vid_ext,processor_filename,modalities,images_used_v1,video_frames_used_v1,Histological Subtype,label,mixed_histology,cohort_status,Media Type,processor_metadata,scope_metadata,v1_visual_source
+2601,1,0.0,.jpg,,X1,NBI,1,0.0,Incomplete (Prepyloric),Incomplete,False,included,Image,,,stills only
+2602,3,0.0,.jpg,,X1,NBI,3,0.0,Complete + Incomplete (Body),Incomplete,True,included,Image,,,stills only
+2603,2,0.0,.jpg,,X1,WLE,2,0.0,Complete (Antrum),Complete,False,included,Image,EVIS X1 (CV-1500),CF-EZ1500DL,stills only
+2604,1,0.0,.jpg,,X1,M-NBI,1,0.0,Complete (Antrum),Complete,False,included,Image,,,stills only
+2605,4,0.0,.jpg,,X1,NBI,4,0.0,Incomplete (Prepyloric),Incomplete,False,included,Image,EVIS X1 (CV-1500),CF-EZ1500DL,stills only
+2606,1,0.0,.jpg,,X1,NBI,1,0.0,Complete (Prepyloric),Complete,False,included,Image,EVIS X1 (CV-1500),CF-H190L,stills only
+2607,3,0.0,.jpg,,X1,M-NBI/NBI,3,0.0,Complete (Antrum),Complete,False,included,Image,EVIS X1 (CV-1500),CF-EZ1500DL,stills only
+2608,10,0.0,.jpg,,X1,M-NBI/NBI,10,0.0,Complete (Antrum/Prepyloric),Complete,False,included,Image,,,stills only
+2609,1,0.0,.jpg,,X1,NBI,0,0.0,IM Positive,,False,"excluded: IM positive, subtype not reported",Image,,,none
+2610,10,5.0,.jpg/.png,.mp4,X1,M-NBI/NBI/WLE,0,251.0,Incomplete (Prepyloric),Incomplete,False,included,Image & Video,EVIS X1 (CV-1500),CF-EZ1500DL,video frames only
+2611,5,0.0,.jpg,,X1,M-NBI/NBI,5,0.0,Complete + Incomplete (Antrum),Incomplete,True,included,Image,EVIS X1 (CV-1500),CF-EZ1500DL,stills only
+2612,9,0.0,.jpg,,X1,M-NBI/NBI,0,0.0,Complete + Incomplete (Antrum / Antrum - Incisura),Incomplete,True,excluded: dysplasia (LGD / Antrum),Image,EVIS X1 (CV-1500),CF-EZ1500DL,none
+2613,7,0.0,.png,,X1,M-NBI/NBI/WLE,4,0.0,Incomplete (Antrum/Prepyloric),Incomplete,False,included,Image,EVIS X1 (CV-1500),CF-EZ1500DL,stills only
+2614,2,0.0,.png,,190,NBI,2,0.0,Incomplete (Prepyloric),Incomplete,False,included,Image,CV-190,CF-H190L,stills only
+2615,4,0.0,.png,,190,NBI,4,0.0,Incomplete (Antrum),Incomplete,False,included,Image,CV-190,CF-H190L,stills only
+2617,10,10.0,.png,.mp4,X1,M-NBI/NBI/WLE,0,502.0,IM Positive,,False,"excluded: IM positive, subtype not reported",Image & Video,,,video frames only
+2618,2,2.0,.png,.mp4,X1,NBI/WLE,0,100.0,IM Positive,,False,"excluded: IM positive, subtype not reported",Image & Video,EVIS X1 (CV-1500),CF-EZ1500DL,video frames only
+2619,3,3.0,.png,.mkv,X1,NBI/WLE,0,153.0,Complete (Prepyloric),Complete,False,included,Image & Video,,,video frames only
+2620,2,2.0,.png,.mp4,X1,WLE,0,100.0,Incomplete (Antrum),Incomplete,False,included,Image & Video,EVIS X1 (CV-1500),CF-H190L,video frames only
+2621,1,1.0,.png,.mp4,X1,NBI,0,51.0,Negative,,False,excluded: histology negative for IM,Image & Video,CV-190,CF-H190L,video frames only
+2622,9,9.0,.png,.mp4,X1,M-NBI/NBI/WLE,0,454.0,Complete (Antrum),Complete,False,included,Image & Video,EVIS X1 (CV-1500),CF-H190L,video frames only
+2623,3,2.0,.png,.mp4,X1,M-NBI/NBI/WLE,0,110.0,,,False,excluded: no histology (control),Image & Video,,,video frames only
+2624,3,3.0,.png,.mp4,X1,M-NBI/WLE,0,155.0,,,False,excluded: no histology (control),Image & Video,,,video frames only
+2625,2,2.0,.png,.mp4,X1,WLE,0,100.0,Complete (Antrum),Complete,False,included,Image & Video,EVIS X1 (CV-1500),,video frames only

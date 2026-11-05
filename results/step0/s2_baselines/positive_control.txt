@@ -1,0 +1,5 @@
+raw signal AUC 0.9861111111111112
+positive control (strong) LR 0.647 0.833
+positive control (strong) SVC 0.588 0.708
+positive control (strong) RF 0.824 0.889
+positive control (visual): BiomedCLIP with +1.5 SD shift in 50 dims for Incomplete, LR nested -> acc 0.765, AUC 0.806

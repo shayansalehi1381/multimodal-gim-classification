@@ -1,0 +1,26 @@
+Loading fused multimodal dataset...
+Found 7 clinical features and 1280 visual features.
+Evaluating RF with 5 PCs...
+Evaluating SVC with 5 PCs...
+Evaluating GB with 5 PCs...
+Evaluating RF with 8 PCs...
+Evaluating SVC with 8 PCs...
+Evaluating GB with 8 PCs...
+
+--- Evaluation Summary ---
+Model Configuration                 | Accuracy   | Correct Cases
+-----------------------------------------------------------------
+RF (PCs=5, Standa)                  | 0.471      | 8/17
+RF (PCs=5, Tuned_)                  | 0.529      | 9/17
+SVC (PCs=5, Standa)                 | 0.588      | 10/17
+SVC (PCs=5, Tuned_)                 | 0.529      | 9/17
+GB (PCs=5, Standa)                  | 0.294      | 5/17
+GB (PCs=5, Tuned_)                  | 0.529      | 9/17
+RF (PCs=8, Standa)                  | 0.471      | 8/17
+RF (PCs=8, Tuned_)                  | 0.412      | 7/17
+SVC (PCs=8, Standa)                 | 0.588      | 10/17
+SVC (PCs=8, Tuned_)                 | 0.824      | 14/17
+GB (PCs=8, Standa)                  | 0.294      | 5/17
+GB (PCs=8, Tuned_)                  | 0.412      | 7/17
+
+Task completed successfully!

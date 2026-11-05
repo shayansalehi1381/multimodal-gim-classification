@@ -1,0 +1,201 @@
+== tracked CSV vs re-run CSV ==
+baseline_lr_predictions.csv                        SAME
+dinov2_final_statistical_report.csv                SAME
+dinov2_frame_metadata.csv                          SAME
+dinov2_multimodal_evaluation_results.csv           SAME
+dinov2_patient_features_17x768.csv                 SAME
+frame_metadata.csv                                 SAME
+infold_pca_summary.csv                             SAME
+multimodal_biomedclip_dinov2_n17.csv               DIFFERENT
+multimodal_classifier_predictions.csv              SAME
+multimodal_dataset_n17.csv                         SAME
+multimodal_model_comparison.csv                    SAME
+olgim_subcohort_analysis.csv                       SAME
+patient_level_correction_analysis.csv              SAME
+patient_visual_features_n17.csv                    SAME
+shap_feature_importance.csv                        SAME
+statistical_evaluation_report.csv                  SAME
+
+== small result CSVs (tracked) ==
+
+--- baseline_lr_predictions.csv (17, 9)
+ fold  test_case_code true_label  true_y pred_label  pred_y  prob_incomplete  best_C  correct
+    1            2601 Incomplete       1 Incomplete       1         0.506934    0.10     True
+    2            2602 Incomplete       1 Incomplete       1         0.713454   10.00     True
+    3            2603   Complete       0 Incomplete       1         0.546007    0.01    False
+    4            2604   Complete       0 Incomplete       1         0.563789    0.10    False
+    5            2605 Incomplete       1 Incomplete       1         0.632309    1.00     True
+    6            2606   Complete       0 Incomplete       1         0.589304    0.10    False
+    7            2607   Complete       0 Incomplete       1         0.560154    0.01    False
+    8            2608   Complete       0 Incomplete       1         0.601300    0.01    False
+    9            2610 Incomplete       1   Complete       0         0.146373    1.00    False
+   10            2611 Incomplete       1 Incomplete       1         0.578319    1.00     True
+   11            2613 Incomplete       1 Incomplete       1         0.726094    1.00     True
+   12            2614 Incomplete       1 Incomplete       1         0.717409    1.00     True
+   13            2615 Incomplete       1   Complete       0         0.456892    0.10    False
+   14            2619   Complete       0 Incomplete       1         0.612116    0.10    False
+   15            2620 Incomplete       1   Complete       0         0.017206    1.00    False
+   16            2622   Complete       0 Incomplete       1         0.552417    0.01    False
+   17            2625   Complete       0 Incomplete       1         0.605046   10.00    False
+
+--- multimodal_model_comparison.csv (4, 12)
+                    model  accuracy  sensitivity  specificity     f1  roc_auc  TP  TN  FP  FN  correct  total
+             RandomForest    0.6471       0.7778        0.500 0.7000   0.5556   7   4   4   2       11     17
+                  SVM_RBF    0.5294       0.6667        0.375 0.6000   0.1528   6   3   5   3        9     17
+         GradientBoosting    0.5882       0.7778        0.375 0.6667   0.5000   7   3   5   2       10     17
+L2-LogReg (Clinical Only)    0.3529       0.6667        0.000 0.5217   0.5000   6   0   8   3        6     17
+
+--- statistical_evaluation_report.csv (5, 10)
+                  model  accuracy_point  accuracy_ci_lo  accuracy_ci_hi  f1_point  f1_ci_lo  f1_ci_hi  roc_auc_point  roc_auc_ci_lo  roc_auc_ci_hi
+   L2-LogReg (Clinical)          0.3529        0.117600          0.5882    0.5217    0.2105    0.7407       0.500000       0.181800       0.800000
+           RandomForest          0.6471        0.411800          0.8824    0.7000    0.4284    0.9000       0.555600       0.249800       0.883400
+                SVM_RBF          0.5294        0.294100          0.7647    0.6000    0.3158    0.8182       0.152800       0.000000       0.381000
+       GradientBoosting          0.5882        0.352900          0.8235    0.6667    0.4000    0.8696       0.500000       0.181800       0.816700
+McNemar: RF vs Baseline          3.2000        0.073638          0.0625    0.0000    5.0000    5.0000       0.294118       0.352941       0.647059
+
+--- dinov2_multimodal_evaluation_results.csv (12, 9)
+Model  PCs Threshold_Type  Accuracy Correct  Sensitivity  Specificity  F1_Score  ROC_AUC
+   RF    5   Standard_0.5  0.470588    8/17     0.555556        0.375  0.526316 0.361111
+   RF    5   Tuned_Youden  0.529412    9/17     0.777778        0.250  0.636364 0.361111
+  SVC    5   Standard_0.5  0.588235   10/17     0.555556        0.625  0.588235 0.652778
+  SVC    5   Tuned_Youden  0.529412    9/17     0.555556        0.500  0.555556 0.652778
+   GB    5   Standard_0.5  0.294118    5/17     0.333333        0.250  0.333333 0.291667
+   GB    5   Tuned_Youden  0.529412    9/17     0.777778        0.250  0.636364 0.291667
+   RF    8   Standard_0.5  0.470588    8/17     0.555556        0.375  0.526316 0.305556
+   RF    8   Tuned_Youden  0.411765    7/17     0.666667        0.125  0.545455 0.305556
+  SVC    8   Standard_0.5  0.588235   10/17     0.555556        0.625  0.588235 0.694444
+  SVC    8   Tuned_Youden  0.823529   14/17     0.666667        1.000  0.800000 0.694444
+   GB    8   Standard_0.5  0.294118    5/17     0.333333        0.250  0.333333 0.277778
+   GB    8   Tuned_Youden  0.411765    7/17     0.666667        0.125  0.545455 0.277778
+
+--- dinov2_final_statistical_report.csv (1, 11)
+                 Model  Accuracy  Accuracy_CI_lower  Accuracy_CI_upper  F1_Score  F1_CI_lower  F1_CI_upper  ROC_AUC  ROC_AUC_CI_lower  ROC_AUC_CI_upper  McNemar_p_value_vs_Baseline
+Multimodal SVC (PCs=8)  0.823529           0.588235                1.0       0.8          0.5          1.0 0.694444          0.414156          0.933485                      0.06543
+
+--- olgim_subcohort_analysis.csv (7, 7)
+ test_case_code  OLGIM_Stage OLGIM_Risk true_label pred_label  prob_incomplete  correct
+           2601            2   Low Risk Incomplete Incomplete           0.7092     True
+           2602            1   Low Risk Incomplete Incomplete           0.6644     True
+           2605            3  High Risk Incomplete Incomplete           0.6487     True
+           2606            1   Low Risk   Complete Incomplete           0.8597    False
+           2610            2   Low Risk Incomplete   Complete           0.3004    False
+           2611            1   Low Risk Incomplete Incomplete           0.5154     True
+           2613            2   Low Risk Incomplete Incomplete           0.5852     True
+
+--- patient_level_correction_analysis.csv (17, 12)
+ Case_Code Histological_Ground_Truth  True_Binary_Label Endoscopic_Signs_Present Baseline_LR_Prediction  Baseline_LR_Prob_Incomplete  Baseline_LR_Correct MultiVision_SVC_Prediction  MultiVision_SVC_Prob_Incomplete  MultiVision_SVC_Correct                    Discordance_Diagnostic_Status                                                                            Clinical_Impact_and_Significance
+      2601                Incomplete                  1                      LBC             Incomplete                       0.5069                 True                   Complete                           0.1359                    False VISUAL DISCORDANCE (Clinical Signs Only Correct)         Gross clinical features prominent; deep visual feature variance fell below classification threshold
+      2602                Incomplete                  1                  LBC+TVF             Incomplete                       0.7135                 True                 Incomplete                           0.4467                     True                               CONCORDANT CORRECT                      Reliable diagnosis confirmed by both endoscopic signs and multi-vision representations
+      2603                  Complete                  0                   TVF+TM             Incomplete                       0.5460                False                   Complete                           0.6585                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+      2604                  Complete                  0                      TVF             Incomplete                       0.5638                False                   Complete                           0.6315                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+      2605                Incomplete                  1           LBC+TVF+MLE+TM             Incomplete                       0.6323                 True                   Complete                           0.2799                    False VISUAL DISCORDANCE (Clinical Signs Only Correct)         Gross clinical features prominent; deep visual feature variance fell below classification threshold
+      2606                  Complete                  0                   LBC+TM             Incomplete                       0.5893                False                   Complete                           0.1461                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+      2607                  Complete                  0                      TVF             Incomplete                       0.5602                False                   Complete                           0.5221                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+      2608                  Complete                  0   LBC+MTB+WOS+TVF+MLE+TM             Incomplete                       0.6013                False                   Complete                           0.2466                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+      2610                Incomplete                  1       LBC+MTB+WOS+TVF+TM               Complete                       0.1464                False                 Incomplete                           0.6420                     True CLINICAL RESCUE (High-Risk Incomplete Corrected) Rescued missed precancerous Incomplete metaplasia (avoided false reassurance; mandated 1-year surveillance)
+      2611                Incomplete                  1           LBC+TVF+MLE+TM             Incomplete                       0.5783                 True                 Incomplete                           0.8091                     True                               CONCORDANT CORRECT                      Reliable diagnosis confirmed by both endoscopic signs and multi-vision representations
+      2613                Incomplete                  1      LBC+MTB+WOS+TVF+MLE             Incomplete                       0.7261                 True                 Incomplete                           0.6142                     True                               CONCORDANT CORRECT                      Reliable diagnosis confirmed by both endoscopic signs and multi-vision representations
+      2614                Incomplete                  1                      LBC             Incomplete                       0.7174                 True                   Complete                           0.4881                    False VISUAL DISCORDANCE (Clinical Signs Only Correct)         Gross clinical features prominent; deep visual feature variance fell below classification threshold
+      2615                Incomplete                  1               LBC+TVF+TM               Complete                       0.4569                False                 Incomplete                           0.8163                     True CLINICAL RESCUE (High-Risk Incomplete Corrected) Rescued missed precancerous Incomplete metaplasia (avoided false reassurance; mandated 1-year surveillance)
+      2619                  Complete                  0                   LBC+TM             Incomplete                       0.6121                False                   Complete                           0.2515                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+      2620                Incomplete                  1                       TM               Complete                       0.0172                False                 Incomplete                           0.7413                     True CLINICAL RESCUE (High-Risk Incomplete Corrected) Rescued missed precancerous Incomplete metaplasia (avoided false reassurance; mandated 1-year surveillance)
+      2622                  Complete                  0               MTB+TVF+TM             Incomplete                       0.5524                False                   Complete                           0.3747                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+      2625                  Complete                  0                   LBC+TM             Incomplete                       0.6050                False                   Complete                           0.4231                     True     SPECIFICITY RECOVERY (False Alarm Corrected) Corrected false-positive clinical signs (eliminated unnecessary aggressive biopsy and surveillance anxiety)
+
+--- shap_feature_importance.csv (19, 4)
+   Feature  Mean_Abs_SHAP                     Model  Rank
+       LBC       0.659894      L2-LogReg (Clinical)     1
+        TM       0.451521      L2-LogReg (Clinical)     2
+       TVF       0.299554      L2-LogReg (Clinical)     3
+       MLE       0.295643      L2-LogReg (Clinical)     4
+       MTB       0.269527      L2-LogReg (Clinical)     5
+       Age       0.233394      L2-LogReg (Clinical)     6
+       WOS       0.156033      L2-LogReg (Clinical)     7
+Visual_PC2       0.071299 RandomForest (Multimodal)     1
+Visual_PC3       0.056937 RandomForest (Multimodal)     2
+       LBC       0.044278 RandomForest (Multimodal)     3
+Visual_PC1       0.035943 RandomForest (Multimodal)     4
+Visual_PC5       0.030381 RandomForest (Multimodal)     5
+       Age       0.029614 RandomForest (Multimodal)     6
+Visual_PC4       0.028957 RandomForest (Multimodal)     7
+        TM       0.017507 RandomForest (Multimodal)     8
+       MLE       0.015156 RandomForest (Multimodal)     9
+       MTB       0.007388 RandomForest (Multimodal)    10
+       TVF       0.005948 RandomForest (Multimodal)    11
+       WOS       0.005604 RandomForest (Multimodal)    12
+
+--- multimodal_classifier_predictions.csv (pivot prob_incomplete / correct)
+model           GradientBoosting  RandomForest  SVM_RBF  GradientBoosting_ok  RandomForest_ok  SVM_RBF_ok
+test_case_code                                                                                           
+2601                      0.8093        0.7092   0.3324                 True             True        True
+2602                      0.8708        0.6644   0.3803                 True             True        True
+2603                      0.9163        0.5434   0.7678                False            False        True
+2604                      0.1965        0.3998   0.7746                 True             True        True
+2605                      0.8501        0.6487   0.2315                 True             True        True
+2606                      0.8813        0.8597   0.4098                False            False       False
+2607                      0.0447        0.3081   0.8181                 True             True        True
+2608                      0.9314        0.8053   0.5655                False            False       False
+2610                      0.8399        0.3004   0.4472                 True            False        True
+2611                      0.6884        0.5154   0.5188                 True             True       False
+2613                      0.3241        0.5852   0.4846                False             True        True
+2614                      0.7556        0.6457   0.3052                 True             True        True
+2615                      0.8731        0.5700   0.5000                 True             True       False
+2619                      0.8084        0.5431   0.4770                False            False       False
+2620                      0.1053        0.1067   0.5502                False            False       False
+2622                      0.1397        0.3050   0.5423                 True             True       False
+2625                      0.7084        0.4301   0.5347                False             True       False
+
+== fallback / threshold probe (replicates phase3_dinov2_final_stats_and_plots SVC loop) ==
+ case  true  p_svc  thr  J_train  pred  fallback inner_prob_range   p_lr  pred_lr  p_rf_biomedclip  pred_rf
+ 2601     1 0.1359 0.40    0.500     0     False      0.060-0.843 0.4752        0             0.47        0
+ 2602     1 0.4467 0.35    0.500     1     False      0.131-0.816 0.6322        1             0.64        1
+ 2603     0 0.6585 0.69    0.222     0     False      0.380-0.756 0.2793        0             0.48        0
+ 2604     0 0.6315 0.64    0.222     0     False      0.311-0.804 0.7673        1             0.43        0
+ 2605     1 0.2799 0.57    0.625     0     False      0.153-0.792 0.6323        1             0.65        1
+ 2606     0 0.1461 0.60    0.222     0     False      0.406-0.733 0.6027        1             0.77        1
+ 2607     0 0.5221 0.58    0.302     0     False      0.356-0.780 0.5064        1             0.29        0
+ 2608     0 0.2466 0.60    0.302     0     False      0.306-0.683 0.9648        1             0.61        1
+ 2610     1 0.6420 0.40    0.375     1     False      0.163-0.939 0.1464        0             0.58        1
+ 2611     1 0.8091 0.45    0.250     1     False      0.317-0.939 0.5783        1             0.29        0
+ 2613     1 0.6142 0.51    0.375     1     False      0.102-0.931 0.7261        1             0.71        1
+ 2614     1 0.4881 0.58    0.500     0     False      0.107-0.955 0.7174        1             0.73        1
+ 2615     1 0.8163 0.48    0.250     1     False      0.254-0.899 0.3449        0             0.51        1
+ 2619     0 0.2515 0.65    0.222     0     False      0.351-0.830 0.6857        1             0.66        1
+ 2620     1 0.7413 0.56    0.250     1     False      0.098-0.956 0.0172        0             0.28        0
+ 2622     0 0.3747 0.60    0.302     0     False      0.298-0.887 0.2959        0             0.44        0
+ 2625     0 0.4231 0.58    0.270     0     False      0.315-0.953 0.6212        1             0.32        0
+SVC acc 0.8235294117647058 AUC 0.6944444444444444 | LR acc 0.4117647058823529 AUC 0.4027777777777778 | RF(biomedclip only) acc 0.6470588235294118 AUC 0.5625
+SVC acc at 0.5 instead of tuned thr: 0.5882352941176471
+any fallback triggered: False
+
+== 2x2 McNemar table (SVC vs LR) ==
+both 5 svc only 9 lr only 2 neither 1
+exact binomial p = 0.0654296875
+
+== media-type / processor confounding (cohort n=17) ==
+ Case Code    Subtype    Media Type         Processor       Scope  n_frames       source_used  svc_pred  svc_prob
+      2601 Incomplete         Image               NaN         NaN         1       stills only         0     0.136
+      2602 Incomplete         Image               NaN         NaN         3       stills only         1     0.447
+      2603   Complete         Image EVIS X1 (CV-1500) CF-EZ1500DL         2       stills only         0     0.658
+      2604   Complete         Image               NaN         NaN         1       stills only         0     0.632
+      2605 Incomplete         Image EVIS X1 (CV-1500) CF-EZ1500DL         4       stills only         0     0.280
+      2606   Complete         Image EVIS X1 (CV-1500)    CF-H190L         1       stills only         0     0.146
+      2607   Complete         Image EVIS X1 (CV-1500) CF-EZ1500DL         3       stills only         0     0.522
+      2608   Complete         Image               NaN         NaN        10       stills only         0     0.247
+      2610 Incomplete Image & Video EVIS X1 (CV-1500) CF-EZ1500DL       251 video frames only         1     0.642
+      2611 Incomplete         Image EVIS X1 (CV-1500) CF-EZ1500DL         5       stills only         1     0.809
+      2613 Incomplete         Image EVIS X1 (CV-1500) CF-EZ1500DL         4       stills only         1     0.614
+      2614 Incomplete         Image            CV-190    CF-H190L         2       stills only         0     0.488
+      2615 Incomplete         Image            CV-190    CF-H190L         4       stills only         1     0.816
+      2619   Complete Image & Video               NaN         NaN       153 video frames only         0     0.251
+      2620 Incomplete Image & Video EVIS X1 (CV-1500)    CF-H190L       100 video frames only         1     0.741
+      2622   Complete Image & Video EVIS X1 (CV-1500)    CF-H190L       454 video frames only         0     0.375
+      2625   Complete Image & Video EVIS X1 (CV-1500)         NaN       100 video frames only         0     0.423
+Subtype            Complete  Incomplete
+source_used                            
+stills only               5           7
+video frames only         3           2
+Subtype            Complete  Incomplete
+Processor                              
+CV-190                    0           2
+EVIS X1 (CV-1500)         5           5

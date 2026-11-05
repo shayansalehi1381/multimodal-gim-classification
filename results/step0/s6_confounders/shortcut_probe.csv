@@ -1,0 +1,23 @@
+probe,embedding,version,n_items,n_positive,n_patients,grouped_LOPO_auc,grouped_LOPO_bacc@0.5
+still_vs_video_frame,biomedclip,cropped,298,98,24,0.8584693877551022,0.7565306122448979
+still_vs_video_frame,dinov2,cropped,298,98,24,0.7973469387755101,0.7238265306122449
+still_vs_video_frame,biomedclip,raw,298,98,24,0.8714795918367347,0.7976530612244898
+still_vs_video_frame,dinov2,raw,298,98,24,0.8307653061224489,0.7344387755102041
+png_vs_jpg_stills,biomedclip,cropped,98,53,24,0.6150943396226415,0.570230607966457
+png_vs_jpg_stills,dinov2,cropped,98,53,24,0.6255765199161425,0.5890985324947589
+png_vs_jpg_stills,biomedclip,raw,98,53,24,0.9744234800838574,0.9272536687631028
+png_vs_jpg_stills,dinov2,raw,98,53,24,0.8855345911949687,0.7995807127882599
+190_vs_X1_stills,biomedclip,cropped,98,6,24,0.3894927536231884,0.4891304347826087
+190_vs_X1_stills,dinov2,cropped,98,6,24,0.10507246376811594,0.5
+190_vs_X1_stills,biomedclip,raw,98,6,24,0.35507246376811596,0.483695652173913
+190_vs_X1_stills,dinov2,raw,98,6,24,0.358695652173913,0.483695652173913
+OSD_vs_none,biomedclip,cropped,298,253,24,0.824066754501537,0.6604743083003952
+OSD_vs_none,dinov2,cropped,298,253,24,0.8027228809837506,0.5668862538427756
+OSD_vs_none,biomedclip,raw,298,253,24,0.9767237593324549,0.8841897233201581
+OSD_vs_none,dinov2,raw,298,253,24,0.9570487483530962,0.874308300395257
+patient_source_video_vs_stills,b_biomedclip,raw (v1 pooled),17,5,17,1.0,1.0
+patient_source_video_vs_stills,c_dinov2,raw (v1 pooled),17,5,17,1.0,1.0
+patient_source_video_vs_stills,d_both_visual,raw (v1 pooled),17,5,17,1.0,1.0
+patient_OSD_present,b_biomedclip,raw (v1 pooled),17,8,17,1.0,0.9375
+patient_OSD_present,c_dinov2,raw (v1 pooled),17,8,17,0.9444444444444444,0.875
+patient_OSD_present,d_both_visual,raw (v1 pooled),17,8,17,0.9722222222222222,0.9444444444444444

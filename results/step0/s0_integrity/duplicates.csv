@@ -1,0 +1,4 @@
+kind,a,b,hamming,cross_patient
+near_dhash256,2613_1_TVF_LBC_IM_Antrum_X1_NBI.png,2613_4_TVF_LBC_IM_Antrum_X1_NBI.png,0,False
+near_dhash256,2617_10_TM_Atrophy_Body_X1_NBI.png,2617_5_TM_Atrophy_Body_X1_M-NBI.png,6,False
+near_dhash256,2617_10_TM_Atrophy_Body_X1_NBI.png,2617_9_TM_Atrophy_Body_X1_NBI.png,6,False

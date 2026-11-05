@@ -1,0 +1,332 @@
+=== e534b00 2026-09-03 feat: complete reproducible multimodal GIM subtype classification pipeline and XAI artifacts
+
+ .gitignore                                         |   24 +
+ 2601_1_LBC_IM_Prepyloric_X1_NBI.jpg                |  Bin 0 -> 549556 bytes
+ 2602_1_TVF_LBC_IM_Body_X1_NBI.jpg                  |  Bin 0 -> 518327 bytes
+ 2602_2_TVF_LBC_IM_Body_X1_NBI.jpg                  |  Bin 0 -> 552374 bytes
+ 2602_3_TVF_LBC_IM_Body_X1_NBI.jpg                  |  Bin 0 -> 600384 bytes
+ 2603_1_TM_Atr_Antrum_X1_WLE.jpg                    |  Bin 0 -> 879006 bytes
+ 2603_2_TVF_IM_Antrum_X1_WLE.jpg                    |  Bin 0 -> 874415 bytes
+ 2604_1_TVF_IM_Antrum_X1_M-NBI.jpg                  |  Bin 0 -> 479893 bytes
+ 2605_1_LBC_TVF_MLE_TM_IM_Atr_Prepyloric_X1_NBI.jpg |  Bin 0 -> 872815 bytes
+ 2605_2_LBC_TVF_MLE_IM_Prepyloric_X1_NBI.jpg        |  Bin 0 -> 925593 bytes
+ 2605_3_LBC_TVF_MLE_IM_Prepyloric_X1_NBI.jpg        |  Bin 0 -> 852651 bytes
+ 2605_4_LBC_TM_IM_Atr_Prepyloric_X1_NBI.jpg         |  Bin 0 -> 874444 bytes
+ 2606_1_LBC_TM_IM_Atr_Prepyloric_X1_NBI.jpg         |  Bin 0 -> 801322 bytes
+ 2607_1_TVF_IM_Body_X1_NBI.jpg                      |  Bin 0 -> 999712 bytes
+ 2607_2_TVF_IM_Body_X1_M-NBI.jpg                    |  Bin 0 -> 797612 bytes
+ 2607_3_TVF_IM_Body_X1_M-NBI.jpg                    |  Bin 0 -> 784959 bytes
+ 2608_10_TVF_MTB_IM_Antrum_X1_M-NBI.jpg             |  Bin 0 -> 915687 bytes
+ 2608_1_TM_ATR_Antrum_X1_NBI.jpg                    |  Bin 0 -> 1206315 bytes
+ 2608_2_TVF_LBC_TM_IM_Antrum_X1_M-NBI.jpg           |  Bin 0 -> 1106558 bytes
+ 2608_3_WOS_IM_Antrum_X1_NBI.jpg                    |  Bin 0 -> 879515 bytes
+ 2608_4_LBC_WOS_MLE_IM_Antrum_X1_NBI.jpg            |  Bin 0 -> 1148586 bytes
+ 2608_5_TVF_LBC_MLE_TM_IM_Antrum_X1_NBI.jpg         |  Bin 0 -> 1181041 bytes
+ 2608_6_TVF_LBC_MLE_TM_IM_Antrum_X1_NBI.jpg         |  Bin 0 -> 1135894 bytes
+ 2608_7_WOS_IM_Antrum_X1_M-NBI.jpg                  |  Bin 0 -> 838472 bytes
+ 2608_8_WOS_LBC_IM_Antrum_X1_NBI.jpg                |  Bin 0 -> 892086 bytes
+ 2608_9_TVF_LBC_MLE_IM_Antrum_X1_NBI.jpg            |  Bin 0 -> 1127740 bytes
+ 2609_1_LBC_IM_Prepyloric_X1_NBI.jpg                |  Bin 0 -> 591931 bytes
+ 2610_10_LBC_TM_IM_Atrophy_Prepyloric_X1_NBI.png    |  Bin 0 -> 4444248 bytes
+ 2610_1_LBC_IM_Prepyloric_X1_NBI.jpg                |  Bin 0 -> 1188490 bytes
+ 2610_2_TVF_IM_Body_X1_M-NBI.jpg                    |  Bin 0 -> 1055579 bytes
+ 2610_3_TVF_IM_Body_X1_M-NBI.jpg                    |  Bin 0 -> 902018 bytes
+ 2610_4_TVF_IM_Body_X1_WLE.jpg                      |  Bin 0 -> 906432 bytes
+ 2610_5_TM_Atr_Prepyloric_X1_NBI.jpg                |  Bin 0 -> 1131760 bytes
+ 2610_6_LBC_MTB_WOS_IM_Prepyloric_X1_M-NBI.png      |  Bin 0 -> 3089217 bytes
+ 2610_7_IM_Prepyloric_X1_WLE.png                    |  Bin 0 -> 3490607 bytes
+ 2610_8_LBC_TM_IM_Atrophy_Prepyloric_X1_NBI.png     |  Bin 0 -> 4783381 bytes
+ 2610_9_LBC_WOS_IM_Prepyloric_X1_M-NBI.png          |  Bin 0 -> 3435541 bytes
+ 2611_1_TVF_IM_Antrum_X1_M-NBI.jpg                  |  Bin 0 -> 899472 bytes
+ 2611_2_TVF_MLE_IM_Antrum_X1_NBI.jpg                |  Bin 0 -> 1057391 bytes
+ 2611_3_TVF_IM_Antrum_X1_NBI.jpg                    |  Bin 0 -> 923453 bytes
+ 2611_4_TM_TVF_LBC_MLE_IM_Antrum_X1_NBI.jpg         |  Bin 0 -> 1144194 bytes
+ 2611_5_TVF_IM_Antrum_X1_NBI.jpg                    |  Bin 0 -> 959239 bytes
+ 2612_1_TM_MTB_Atr_IM_Antrum_X1_NBI.jpg             |  Bin 0 -> 871749 bytes
+ 2612_2_TM_MTB_WOS_Atr_IM_Antrum_X1_NBI.jpg         |  Bin 0 -> 960625 bytes
+ 2612_3_TM_MTB_WOS_Atr_IM_Antrum_X1_NBI.jpg         |  Bin 0 -> 880649 bytes
+ 2612_4_MTB_IM_Antrum_X1_M-NBI.jpg                  |  Bin 0 -> 911726 bytes
+ 2612_5_MTB_WOS_IM_Antrum_X1_M-NBI.jpg              |  Bin 0 -> 964430 bytes
+ 2612_6_MTB_WOS_IM_Antrum_X1_M-NBI.jpg              |  Bin 0 -> 980421 bytes
+ 2612_7_MTB_WOS_LBC_IM_Antrum_X1_M-NBI.jpg          |  Bin 0 -> 946359 bytes
+ 2612_8_MTB_IM_Antrum_X1_M-NBI.jpg                  |  Bin 0 -> 923735 bytes
+ 2612_9_TVF_MTB_LBC_IM_Antrum_X1_M-NBI.jpg          |  Bin 0 -> 923735 bytes
+ 2613_1_TVF_LBC_IM_Antrum_X1_NBI.png                |  Bin 0 -> 5272359 bytes
+ 2613_2_MLE_IM_Antrum_X1_WLE.png                    |  Bin 0 -> 3576837 bytes
+ 2613_3_MLE_LBC_IM_Antrum_X1_NBI.png                |  Bin 0 -> 4091682 bytes
+ 2613_4_TVF_LBC_IM_Antrum_X1_NBI.png                |  Bin 0 -> 5272727 bytes
+ 2613_5_MTB_TVF_IM_Antrum_X1_NBI.png                |  Bin 0 -> 4349324 bytes
+ 2613_6_MTB_WOS_IM_Prepyloric_X1_M-NBI.png          |  Bin 0 -> 4008041 bytes
+ 2613_7_TVF_IM_Antrum_X1_WLE.png                    |  Bin 0 -> 3645701 bytes
+ 2614_1_LBC_IM_Prepyloric_190_NBI.png               |  Bin 0 -> 595589 bytes
+ 2614_2_LBC_IM_Prepyloric_190_NBI.png               |  Bin 0 -> 603136 bytes
+ 2615_1_TVF_LBC_IM_Antrum_190_NBI.png               |  Bin 0 -> 510272 bytes
+ 2615_2_TVF_LBC_IM_Antrum_190_NBI.png               |  Bin 0 -> 467527 bytes
+ 2615_3_TVF_TM_IM_Atr_Antrum_190_NBI.png            |  Bin 0 -> 446422 bytes
+ 2615_4_TVF_LBC_IM_Antrum_190_NBI.png               |  Bin 0 -> 521588 bytes
+ 2617_10_TM_Atrophy_Body_X1_NBI.png                 |  Bin 0 -> 2937405 bytes
+ 2617_1_TM_Atrophy_Body_X1_WLE.png                  |  Bin 0 -> 2783046 bytes
+ 2617_2_TM_Atrophy_Body_X1_WLE.png                  |  Bin 0 -> 3332501 bytes
+ 2617_3_TM_Atrophy_Body_X1_WLE.png                  |  Bin 0 -> 2442354 bytes
+ 2617_4_TM_Atrophy_Body_X1_NBI.png                  |  Bin 0 -> 3315538 bytes
+ 2617_5_TM_Atrophy_Body_X1_M-NBI.png                |  Bin 0 -> 3000939 bytes
+ 2617_6_TM_Atrophy_Body_X1_M-NBI.png                |  Bin 0 -> 3380051 bytes
+ 2617_7_LBC_IM_Prepyloric_X1_NBI.png                |  Bin 0 -> 3939311 bytes
+ 2617_8_TM_Atrophy_Body_X1_NBI.png                  |  Bin 0 -> 3668833 bytes
+ 2617_9_TM_Atrophy_Body_X1_NBI.png                  |  Bin 0 -> 3489860 bytes
+ 2618_1_Antrum_IM_X1_WLE.png                        |  Bin 0 -> 2868336 bytes
+ 2618_2_LBC_Prepyloric_IM_X1_NBI.png                |  Bin 0 -> 4500415 bytes
+ 2619_1_TM_Atrophy_IM_Prepyloric_X1_WLE.png         |  Bin 0 -> 2709190 bytes
+ 2619_2_TM_Atrophy_IM_Prepyloric_X1_WLE.png         |  Bin 0 -> 3840682 bytes
+ 2619_3_LBC_TM_IM_Prepyloric_X1_NBI.png             |  Bin 0 -> 4163432 bytes
+ 2620_1_TM_Atrophy_Body_X1_WLE.png                  |  Bin 0 -> 3162803 bytes
+ 2620_2_TM_Atrophy_Antrum_X1_WLE.png                |  Bin 0 -> 2384632 bytes
+ 2621_1_TM_Atrophy_Antrum_X1_NBI.png                |  Bin 0 -> 3537870 bytes
+ 2622_1_AHP_GA_Antrum_X1_M-NBI.png                  |  Bin 0 -> 3810343 bytes
+ 2622_2_TM_Atrophy_Antrum_X1_WLE.png                |  Bin 0 -> 3700076 bytes
+ 2622_3_TM_Atrophy_Antrum_X1_WLE.png                |  Bin 0 -> 3917962 bytes
+ 2622_4_TVF_IM_Antrum_X1_NBI.png                    |  Bin 0 -> 3865090 bytes
+ 2622_5_TVF_IM_Antrum_X1_NBI.png                    |  Bin 0 -> 3812281 bytes
+ 2622_6_TM_Atrophy_Antrum_X1_NBI.png                |  Bin 0 -> 3959210 bytes
+ 2622_7_TVF_IM_Antrum_X1_NBI.png                    |  Bin 0 -> 3749256 bytes
+ 2622_8_TVF_IM_Antrum_X1_NBI.png                    |  Bin 0 -> 3942859 bytes
+ 2622_9_MTB_IM_Antrum_X1_NBI.png                    |  Bin 0 -> 3752495 bytes
+ 2623_1_Normal_Body_X1_NBI.png                      |  Bin 0 -> 3143311 bytes
+ 2623_2_Normal_Body_X1_M-NBI.png                    |  Bin 0 -> 3145840 bytes
+ 2623_3_Normal_Body_X1_WLE.png                      |  Bin 0 -> 3017843 bytes
+ 2624_1_Normal_Antrum_X1_WLE.png                    |  Bin 0 -> 2906828 bytes
+ 2624_2_Normal_Antrum_X1_M-NBI.png                  |  Bin 0 -> 3292040 bytes
+ 2624_3_Normal_Antrum_X1_M-NBI.png                  |  Bin 0 -> 3475689 bytes
+ 2625_1_LBC_ME_TM_IM_Atrophy_Antrum_X1_WLE.png      |  Bin 0 -> 3823161 bytes
+ 2625_2_LBC_ME_TM_IM_Atrophy_Antrum_X1_WLE.png      |  Bin 0 -> 4243218 bytes
+ GIMENDO_v2_Metadata.xlsx                           |  Bin 0 -> 14494 bytes
+ README.md                                          |   72 +
+ data/processed/baseline_lr_predictions.csv         |   18 +
+ data/processed/cleaned_metadata_n17.xlsx           |  Bin 0 -> 6563 bytes
+ data/processed/frame_embeddings_1976x512.npy       |  Bin 0 -> 4128896 bytes
+ data/processed/frame_metadata.csv                  | 2017 ++++++++++++++++++++
+ data/processed/infold_pca_summary.csv              |   18 +
+ data/processed/lopocv_splits_n17.pkl               |  Bin 0 -> 49818 bytes
+ .../multimodal_classifier_predictions.csv          |   52 +
+ data/processed/multimodal_dataset_n17.csv          |   18 +
+ data/processed/multimodal_dataset_n17.pkl          |  Bin 0 -> 106735 bytes
+ data/processed/multimodal_model_comparison.csv     |    5 +
+ data/processed/olgim_subcohort_analysis.csv        |    8 +
+ data/processed/patient_visual_features_n17.csv     |   18 +
+ data/processed/patient_visual_features_n17.npy     |  Bin 0 -> 34944 bytes
+ data/processed/shap_feature_importance.csv         |   20 +
+ data/processed/shap_values_cache.pkl               |  Bin 0 -> 5575 bytes
+ data/processed/statistical_evaluation_report.csv   |    6 +
+ figures/attention_rollout_2601.png                 |  Bin 0 -> 5446078 bytes
+ figures/attention_rollout_2602.png                 |  Bin 0 -> 5206212 bytes
+ figures/attention_rollout_2603.png                 |  Bin 0 -> 4667825 bytes
+ figures/attention_rollout_2605.png                 |  Bin 0 -> 4883448 bytes
+ figures/baseline_vs_multimodal_shap_shift.png      |  Bin 0 -> 101418 bytes
+ figures/shap_bar_importance.png                    |  Bin 0 -> 142636 bytes
+ figures/shap_summary_dot_plot.png                  |  Bin 0 -> 186219 bytes
+ phase1_extract_frames.py                           |   54 +
+ phase1_filter_blurry.py                            |   47 +
+ phase1_process_metadata.py                         |  113 ++
+ phase1_setup_and_verify.py                         |   37 +
+ phase2_task1_load_model.py                         |  134 ++
+ phase2_task2_extract_embeddings.py                 |  189 ++
+ phase2_task3_fix_missing_frames.py                 |   54 +
+ phase2_task3_patient_pooling.py                    |  122 ++
+ phase2_task4_multimodal_fusion.py                  |  113 ++
+ phase3_task1_lopocv_setup.py                       |  168 ++
+ phase3_task2_baseline_lr.py                        |  184 ++
+ phase3_task3_infold_pca.py                         |  195 ++
+ phase3_task4_multimodal_classifiers.py             |  249 +++
+ phase3_task5_olgim_subanalysis.py                  |  190 ++
+ phase3_task6_statistical_evaluation.py             |  279 +++
+ phase4_task1_shap_analysis.py                      |  212 ++
+ phase4_task2_shap_plots.py                         |  161 ++
+ phase4_task3_attention_rollout.py                  |  176 ++
+ requirements.txt                                   |   14 +
+ run_pipeline.py                                    |   78 +
+ verify_all_phases.py                               |  166 ++
+ 145 files changed, 5211 insertions(+)
+=== 31f6a3a 2026-09-04 feat: integrate DINOv2 multi-vision pipeline, updated orchestrator, and 82.4% benchmark docs
+
+ README.md            | 18 ++++++++----------
+ run_pipeline.py      |  6 +++++-
+ verify_all_phases.py | 42 +++++++++++++++++++++++++++++++++++++++++-
+ 3 files changed, 54 insertions(+), 12 deletions(-)
+=== ac5f1d4 2026-09-04 feat: finalize DINOv2 multi-vision pipeline and 82.4% benchmark results
+
+ data/processed/dinov2_final_statistical_report.csv |   2 +
+ .../dinov2_multimodal_evaluation_results.csv       |  13 ++
+ figures/model_accuracy_jump_comparison.png         | Bin 0 -> 87322 bytes
+ figures/multimodal_roc_comparison_dinov2.png       | Bin 0 -> 156425 bytes
+ phase2_dinov2_extract_embeddings.py                |  94 +++++++++
+ phase2_dinov2_patient_pooling_and_fusion.py        |  92 ++++++++
+ phase3_dinov2_final_stats_and_plots.py             | 235 +++++++++++++++++++++
+ phase3_dinov2_multimodal_evaluation.py             | 179 ++++++++++++++++
+ 8 files changed, 615 insertions(+)
+=== 1c3d17f 2026-09-04 chore: add clean .gitignore rules and track DINOv2 CSV feature tables
+
+ .gitignore                                         |    5 +
+ data/processed/dinov2_frame_metadata.csv           | 2017 ++++++++++++++++++++
+ data/processed/dinov2_patient_features_17x768.csv  |   18 +
+ .../processed/multimodal_biomedclip_dinov2_n17.csv |   18 +
+ 4 files changed, 2058 insertions(+)
+=== d359b9d 2026-09-04 chore: relax dependency versions in requirements.txt for cross-environment compatibility
+
+ requirements.txt | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+=== db10a8f 2026-09-04 fix(reproducibility): migrate pkl loading to csv, handle int f-strings, add transformers to requirements, and make attention rollout resilient
+
+ phase3_dinov2_final_stats_and_plots.py |  2 +-
+ phase3_dinov2_multimodal_evaluation.py |  2 +-
+ phase3_task1_lopocv_setup.py           |  8 +++----
+ phase3_task2_baseline_lr.py            |  6 ++---
+ phase3_task3_infold_pca.py             |  6 ++---
+ phase3_task4_multimodal_classifiers.py |  6 ++---
+ phase4_task1_shap_analysis.py          |  8 ++++---
+ phase4_task2_shap_plots.py             |  2 ++
+ phase4_task3_attention_rollout.py      | 40 +++++++++++++++++++++++++++-------
+ requirements.txt                       |  3 ++-
+ 10 files changed, 56 insertions(+), 27 deletions(-)
+=== f87af4c 2026-09-04 docs: update README with multi-vision benchmarks, cross-platform execution guide, and eval instructions
+
+ README.md | 309 +++++++++++++++++++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 264 insertions(+), 45 deletions(-)
+=== 50ecce8 2026-09-04 fix(verify): gracefully handle missing filtered_frames directory in verification script
+
+ verify_all_phases.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+=== 61d90c0 2026-09-04 chore: remove raw dataset images from git tracking and add public Zenodo dataset links to README
+
+ .gitignore                                         |  15 ++++++++++++---
+ 2601_1_LBC_IM_Prepyloric_X1_NBI.jpg                | Bin 549556 -> 0 bytes
+ 2602_1_TVF_LBC_IM_Body_X1_NBI.jpg                  | Bin 518327 -> 0 bytes
+ 2602_2_TVF_LBC_IM_Body_X1_NBI.jpg                  | Bin 552374 -> 0 bytes
+ 2602_3_TVF_LBC_IM_Body_X1_NBI.jpg                  | Bin 600384 -> 0 bytes
+ 2603_1_TM_Atr_Antrum_X1_WLE.jpg                    | Bin 879006 -> 0 bytes
+ 2603_2_TVF_IM_Antrum_X1_WLE.jpg                    | Bin 874415 -> 0 bytes
+ 2604_1_TVF_IM_Antrum_X1_M-NBI.jpg                  | Bin 479893 -> 0 bytes
+ 2605_1_LBC_TVF_MLE_TM_IM_Atr_Prepyloric_X1_NBI.jpg | Bin 872815 -> 0 bytes
+ 2605_2_LBC_TVF_MLE_IM_Prepyloric_X1_NBI.jpg        | Bin 925593 -> 0 bytes
+ 2605_3_LBC_TVF_MLE_IM_Prepyloric_X1_NBI.jpg        | Bin 852651 -> 0 bytes
+ 2605_4_LBC_TM_IM_Atr_Prepyloric_X1_NBI.jpg         | Bin 874444 -> 0 bytes
+ 2606_1_LBC_TM_IM_Atr_Prepyloric_X1_NBI.jpg         | Bin 801322 -> 0 bytes
+ 2607_1_TVF_IM_Body_X1_NBI.jpg                      | Bin 999712 -> 0 bytes
+ 2607_2_TVF_IM_Body_X1_M-NBI.jpg                    | Bin 797612 -> 0 bytes
+ 2607_3_TVF_IM_Body_X1_M-NBI.jpg                    | Bin 784959 -> 0 bytes
+ 2608_10_TVF_MTB_IM_Antrum_X1_M-NBI.jpg             | Bin 915687 -> 0 bytes
+ 2608_1_TM_ATR_Antrum_X1_NBI.jpg                    | Bin 1206315 -> 0 bytes
+ 2608_2_TVF_LBC_TM_IM_Antrum_X1_M-NBI.jpg           | Bin 1106558 -> 0 bytes
+ 2608_3_WOS_IM_Antrum_X1_NBI.jpg                    | Bin 879515 -> 0 bytes
+ 2608_4_LBC_WOS_MLE_IM_Antrum_X1_NBI.jpg            | Bin 1148586 -> 0 bytes
+ 2608_5_TVF_LBC_MLE_TM_IM_Antrum_X1_NBI.jpg         | Bin 1181041 -> 0 bytes
+ 2608_6_TVF_LBC_MLE_TM_IM_Antrum_X1_NBI.jpg         | Bin 1135894 -> 0 bytes
+ 2608_7_WOS_IM_Antrum_X1_M-NBI.jpg                  | Bin 838472 -> 0 bytes
+ 2608_8_WOS_LBC_IM_Antrum_X1_NBI.jpg                | Bin 892086 -> 0 bytes
+ 2608_9_TVF_LBC_MLE_IM_Antrum_X1_NBI.jpg            | Bin 1127740 -> 0 bytes
+ 2609_1_LBC_IM_Prepyloric_X1_NBI.jpg                | Bin 591931 -> 0 bytes
+ 2610_10_LBC_TM_IM_Atrophy_Prepyloric_X1_NBI.png    | Bin 4444248 -> 0 bytes
+ 2610_1_LBC_IM_Prepyloric_X1_NBI.jpg                | Bin 1188490 -> 0 bytes
+ 2610_2_TVF_IM_Body_X1_M-NBI.jpg                    | Bin 1055579 -> 0 bytes
+ 2610_3_TVF_IM_Body_X1_M-NBI.jpg                    | Bin 902018 -> 0 bytes
+ 2610_4_TVF_IM_Body_X1_WLE.jpg                      | Bin 906432 -> 0 bytes
+ 2610_5_TM_Atr_Prepyloric_X1_NBI.jpg                | Bin 1131760 -> 0 bytes
+ 2610_6_LBC_MTB_WOS_IM_Prepyloric_X1_M-NBI.png      | Bin 3089217 -> 0 bytes
+ 2610_7_IM_Prepyloric_X1_WLE.png                    | Bin 3490607 -> 0 bytes
+ 2610_8_LBC_TM_IM_Atrophy_Prepyloric_X1_NBI.png     | Bin 4783381 -> 0 bytes
+ 2610_9_LBC_WOS_IM_Prepyloric_X1_M-NBI.png          | Bin 3435541 -> 0 bytes
+ 2611_1_TVF_IM_Antrum_X1_M-NBI.jpg                  | Bin 899472 -> 0 bytes
+ 2611_2_TVF_MLE_IM_Antrum_X1_NBI.jpg                | Bin 1057391 -> 0 bytes
+ 2611_3_TVF_IM_Antrum_X1_NBI.jpg                    | Bin 923453 -> 0 bytes
+ 2611_4_TM_TVF_LBC_MLE_IM_Antrum_X1_NBI.jpg         | Bin 1144194 -> 0 bytes
+ 2611_5_TVF_IM_Antrum_X1_NBI.jpg                    | Bin 959239 -> 0 bytes
+ 2612_1_TM_MTB_Atr_IM_Antrum_X1_NBI.jpg             | Bin 871749 -> 0 bytes
+ 2612_2_TM_MTB_WOS_Atr_IM_Antrum_X1_NBI.jpg         | Bin 960625 -> 0 bytes
+ 2612_3_TM_MTB_WOS_Atr_IM_Antrum_X1_NBI.jpg         | Bin 880649 -> 0 bytes
+ 2612_4_MTB_IM_Antrum_X1_M-NBI.jpg                  | Bin 911726 -> 0 bytes
+ 2612_5_MTB_WOS_IM_Antrum_X1_M-NBI.jpg              | Bin 964430 -> 0 bytes
+ 2612_6_MTB_WOS_IM_Antrum_X1_M-NBI.jpg              | Bin 980421 -> 0 bytes
+ 2612_7_MTB_WOS_LBC_IM_Antrum_X1_M-NBI.jpg          | Bin 946359 -> 0 bytes
+ 2612_8_MTB_IM_Antrum_X1_M-NBI.jpg                  | Bin 923735 -> 0 bytes
+ 2612_9_TVF_MTB_LBC_IM_Antrum_X1_M-NBI.jpg          | Bin 923735 -> 0 bytes
+ 2613_1_TVF_LBC_IM_Antrum_X1_NBI.png                | Bin 5272359 -> 0 bytes
+ 2613_2_MLE_IM_Antrum_X1_WLE.png                    | Bin 3576837 -> 0 bytes
+ 2613_3_MLE_LBC_IM_Antrum_X1_NBI.png                | Bin 4091682 -> 0 bytes
+ 2613_4_TVF_LBC_IM_Antrum_X1_NBI.png                | Bin 5272727 -> 0 bytes
+ 2613_5_MTB_TVF_IM_Antrum_X1_NBI.png                | Bin 4349324 -> 0 bytes
+ 2613_6_MTB_WOS_IM_Prepyloric_X1_M-NBI.png          | Bin 4008041 -> 0 bytes
+ 2613_7_TVF_IM_Antrum_X1_WLE.png                    | Bin 3645701 -> 0 bytes
+ 2614_1_LBC_IM_Prepyloric_190_NBI.png               | Bin 595589 -> 0 bytes
+ 2614_2_LBC_IM_Prepyloric_190_NBI.png               | Bin 603136 -> 0 bytes
+ 2615_1_TVF_LBC_IM_Antrum_190_NBI.png               | Bin 510272 -> 0 bytes
+ 2615_2_TVF_LBC_IM_Antrum_190_NBI.png               | Bin 467527 -> 0 bytes
+ 2615_3_TVF_TM_IM_Atr_Antrum_190_NBI.png            | Bin 446422 -> 0 bytes
+ 2615_4_TVF_LBC_IM_Antrum_190_NBI.png               | Bin 521588 -> 0 bytes
+ 2617_10_TM_Atrophy_Body_X1_NBI.png                 | Bin 2937405 -> 0 bytes
+ 2617_1_TM_Atrophy_Body_X1_WLE.png                  | Bin 2783046 -> 0 bytes
+ 2617_2_TM_Atrophy_Body_X1_WLE.png                  | Bin 3332501 -> 0 bytes
+ 2617_3_TM_Atrophy_Body_X1_WLE.png                  | Bin 2442354 -> 0 bytes
+ 2617_4_TM_Atrophy_Body_X1_NBI.png                  | Bin 3315538 -> 0 bytes
+ 2617_5_TM_Atrophy_Body_X1_M-NBI.png                | Bin 3000939 -> 0 bytes
+ 2617_6_TM_Atrophy_Body_X1_M-NBI.png                | Bin 3380051 -> 0 bytes
+ 2617_7_LBC_IM_Prepyloric_X1_NBI.png                | Bin 3939311 -> 0 bytes
+ 2617_8_TM_Atrophy_Body_X1_NBI.png                  | Bin 3668833 -> 0 bytes
+ 2617_9_TM_Atrophy_Body_X1_NBI.png                  | Bin 3489860 -> 0 bytes
+ 2618_1_Antrum_IM_X1_WLE.png                        | Bin 2868336 -> 0 bytes
+ 2618_2_LBC_Prepyloric_IM_X1_NBI.png                | Bin 4500415 -> 0 bytes
+ 2619_1_TM_Atrophy_IM_Prepyloric_X1_WLE.png         | Bin 2709190 -> 0 bytes
+ 2619_2_TM_Atrophy_IM_Prepyloric_X1_WLE.png         | Bin 3840682 -> 0 bytes
+ 2619_3_LBC_TM_IM_Prepyloric_X1_NBI.png             | Bin 4163432 -> 0 bytes
+ 2620_1_TM_Atrophy_Body_X1_WLE.png                  | Bin 3162803 -> 0 bytes
+ 2620_2_TM_Atrophy_Antrum_X1_WLE.png                | Bin 2384632 -> 0 bytes
+ 2621_1_TM_Atrophy_Antrum_X1_NBI.png                | Bin 3537870 -> 0 bytes
+ 2622_1_AHP_GA_Antrum_X1_M-NBI.png                  | Bin 3810343 -> 0 bytes
+ 2622_2_TM_Atrophy_Antrum_X1_WLE.png                | Bin 3700076 -> 0 bytes
+ 2622_3_TM_Atrophy_Antrum_X1_WLE.png                | Bin 3917962 -> 0 bytes
+ 2622_4_TVF_IM_Antrum_X1_NBI.png                    | Bin 3865090 -> 0 bytes
+ 2622_5_TVF_IM_Antrum_X1_NBI.png                    | Bin 3812281 -> 0 bytes
+ 2622_6_TM_Atrophy_Antrum_X1_NBI.png                | Bin 3959210 -> 0 bytes
+ 2622_7_TVF_IM_Antrum_X1_NBI.png                    | Bin 3749256 -> 0 bytes
+ 2622_8_TVF_IM_Antrum_X1_NBI.png                    | Bin 3942859 -> 0 bytes
+ 2622_9_MTB_IM_Antrum_X1_NBI.png                    | Bin 3752495 -> 0 bytes
+ 2623_1_Normal_Body_X1_NBI.png                      | Bin 3143311 -> 0 bytes
+ 2623_2_Normal_Body_X1_M-NBI.png                    | Bin 3145840 -> 0 bytes
+ 2623_3_Normal_Body_X1_WLE.png                      | Bin 3017843 -> 0 bytes
+ 2624_1_Normal_Antrum_X1_WLE.png                    | Bin 2906828 -> 0 bytes
+ 2624_2_Normal_Antrum_X1_M-NBI.png                  | Bin 3292040 -> 0 bytes
+ 2624_3_Normal_Antrum_X1_M-NBI.png                  | Bin 3475689 -> 0 bytes
+ 2625_1_LBC_ME_TM_IM_Atrophy_Antrum_X1_WLE.png      | Bin 3823161 -> 0 bytes
+ 2625_2_LBC_ME_TM_IM_Atrophy_Antrum_X1_WLE.png      | Bin 4243218 -> 0 bytes
+ README.md                                          |  11 ++++++++++-
+ 100 files changed, 22 insertions(+), 4 deletions(-)
+=== 4b67aad 2026-09-04 docs: clarify raw archive extraction and full pipeline execution steps in README
+
+ README.md | 22 +++++++++++++++-------
+ 1 file changed, 15 insertions(+), 7 deletions(-)
+=== 2b1d32f 2026-09-05 fix(pipeline): integrate full frame extraction & missing frames fix into master orchestrator with multi-path discovery
+
+ phase1_extract_frames.py           | 16 +++++++++++-----
+ phase2_task3_fix_missing_frames.py | 27 ++++++++++++++-------------
+ run_pipeline.py                    |  3 +++
+ 3 files changed, 28 insertions(+), 18 deletions(-)
+=== 7bc8d26 2026-09-05 fix: resolve NameError for image_files variable in missing frames script
+
+ phase2_task3_fix_missing_frames.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+=== 4b65635 2026-09-05 chore: sync all modified phase scripts and formatting updates
+
+ phase1_filter_blurry.py            | 1 +
+ phase1_process_metadata.py         | 1 +
+ phase2_task1_load_model.py         | 4 ++++
+ phase2_task2_extract_embeddings.py | 3 +++
+ phase2_task3_fix_missing_frames.py | 1 +
+ 5 files changed, 10 insertions(+)
+=== 5c5f2be 2026-09-05 feat(viz): add composite performance panel (ROC, CM, CI) and patient-level correction table
+
+ data/processed/patient_level_correction_analysis.csv |  18 ++++++++++++++++++
+ figures/figure2_comprehensive_performance_panel.png  | Bin 0 -> 557028 bytes
+ 2 files changed, 18 insertions(+)
+=== 6f03d5d 2026-09-08 fix(xai): correct Case 2602 histology label to Incomplete and regenerate attention rollout figure
+
+ figures/attention_rollout_2602.png | Bin 5206212 -> 5206723 bytes
+ phase4_task3_attention_rollout.py  |   6 ++++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)

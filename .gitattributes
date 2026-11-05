@@ -1,0 +1,4 @@
+# Frozen protocol files: keep exact bytes so their SHA-256 values stay valid
+results/goal1/config_B.json -text
+results/goal1/config_B.sha256 -text
+results/goal1/capped_list.csv -text

@@ -36,3 +36,21 @@ data/processed/*.xlsx
 
 # Note: data/processed/ and figures/ are intentionally NOT ignored
 # to preserve the processed embeddings and evaluation results.
+
+# Private local copy of project notes
+CLAUDE.local.md
+
+# Outputs, model files and embedding folders
+outputs/
+models/
+step0/embeddings_*/
+*.npz
+*.pt
+*.pth
+*.safetensors
+*.tar
+*.7z
+
+# Large or system files
+desktop.ini
+docs/archive_v1/ResearchFinal2.pdf
